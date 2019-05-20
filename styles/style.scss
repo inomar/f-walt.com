@@ -1,0 +1,22 @@
+// We can import bulma into the project using Sass.
+@import '../node_modules/bulma/bulma';
+
+html,body {
+  background-color: $black;
+}
+
+
+.l-layout {
+  &Header {
+    background-color: $black !important;
+    &__nav {
+      margin: 0 auto;
+    }
+  }
+}
+
+.p-header {
+  &Logo {
+    text-align: center;
+  }
+}
