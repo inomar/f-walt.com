@@ -1,4 +1,6 @@
 // We can import bulma into the project using Sass.
+$radius: 1px;
+
 @import '../node_modules/bulma/bulma';
 
 html,body {
@@ -20,4 +22,15 @@ html,body {
   &Logo {
     text-align: center;
   }
+}
+
+.p-live {
+  background-image: url(/static/top.jpg);
+  &Wrap {
+    background-color: rgba(256,256,256,.2);
+  }
+}
+
+.u-text-align {
+  text-align: center
 }
