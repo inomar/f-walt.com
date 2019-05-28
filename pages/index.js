@@ -4,6 +4,7 @@ import Topic from '../components/Topic';
 import Live from '../components/organisms/Live';
 import Movie from '../components/organisms/Movie';
 import Button from '../components/atoms/Button';
+import MusicPlayer from '../components/atoms/MusicPlayer';
 
 const Hero = styled.div`
   text-align: center;
@@ -23,7 +24,7 @@ export default () => (
       <section className="section">
         <div className="container">
           <Hero>
-            <img src="/static/top.jpg" />
+            <img src="/static/top.jpg"/>
           </Hero>
         </div>
       </section>
@@ -72,10 +73,23 @@ export default () => (
         <div className="container">
           <h2 className="u-text-align">VIDEO</h2>
           <div className="columns">
-            <div className="column">
-              <Movie />
-            </div>
+            {
+              movies && movies.map(movie => (
+                <div className="column" >
+                  <Movie movieId={movie.movieId} />
+                </div>
+              ))
+            }
           </div>
+          <div className="u-text-align">
+              <Button title="Show All" />
+            </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <MusicPlayer />
         </div>
       </section>
 
@@ -110,5 +124,17 @@ const lives = [
     ticket: 2500,
     open: '2019-05-03 18:00:00',
     start: '2019-05-03 19:00:00'
+  }
+];
+
+const movies = [
+  {
+    movieId: 'W3q8Od5qJio',
+  },
+  {
+    movieId: 'yMMz2VwbhVI', 
+  },
+  {
+    movieId: 'GvD3CHA48pA',
   }
 ]

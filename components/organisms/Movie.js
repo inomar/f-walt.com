@@ -3,9 +3,9 @@ import YouTube from 'react-youtube';
 
 const MovieWrap = styled.div`
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
   height: 0;
-  overflow: 'hidden';
+  overflow: hidden;
   & iframe {
     position: absolute;
     top: 0;
@@ -15,20 +15,21 @@ const MovieWrap = styled.div`
   }
 `;
 
-
 const opts = {
-  height: '390',
-  width: '640',
+  height: '480',
+  width: '854',
   playerVars: {
-    autoplay: 1,
+    showinfo:0,
+    rel: 0,
+    controls: 2,
   },
 };
 
-const Movie = () => {
+const Movie = ({movieId}) => {
   return (
-    <MovieWrap>
+    <MovieWrap key={movieId}>
       <YouTube
-        videoid="2g811Eo7K8U"
+        videoId={movieId}
         opts={opts}
         onReady={onReady}
       />
@@ -36,8 +37,9 @@ const Movie = () => {
   )
 }
 
-const onReady = (event) => (
-  event.target.pauseVideo()
-);
+const onReady = (event) => {
+  event.target.pauseVideo();
+}
+
 
 export default Movie;

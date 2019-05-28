@@ -2,12 +2,16 @@ import styled from 'styled-components';
 
 const Brand = styled.div`
   text-align: center;
+  margin-top: 20px;
+  & img {
+    height: 100px;
+  }
 `;
 
 export default() => (
   <header>
     <Brand>
-      LOGO
+      <img src="/static/logo.png" />
     </Brand>
     <div className="container">
       <nav className="navbar is-dark l-layoutHeader" role="navigation" aria-label="main navigation">
