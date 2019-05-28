@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  cms:
+    image: node:10
+    ports:
+      - 1338:1337
+    volumes:
+      - ./cms:/usr/local/app
+    depends_on:
+      - db
+    restart: always
+    working_dir: /usr/local/app
+    entrypoint: "/bin/bash"
+    command: "-c \"if [ ! -d \"node_modules\" ]; then yarn; fi; yarn start\""
+    environment:
+      - DATABASE_HOST=db
+  
+  db:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+      - 27018:27018
+    command:
+      - mongod
+  
+  frontend:
+    image: node:10
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/local/app
+    restart: always
+    working_dir: /usr/local/app
+    entrypoint: "/bin/bash"
+    command: "-c \"if [ ! -d \"node_modules\" ]; then yarn; fi; yarn dev\""
