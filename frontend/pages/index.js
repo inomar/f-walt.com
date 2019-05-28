@@ -4,13 +4,14 @@ import Topic from '../components/Topic';
 import Live from '../components/organisms/Live';
 import Movie from '../components/organisms/Movie';
 import Button from '../components/atoms/Button';
+import Heading from '../components/atoms/Heading';
 import MusicPlayer from '../components/atoms/MusicPlayer';
 
 const Hero = styled.div`
   text-align: center;
   & img {
     width: 100%;
-    height: 450px;
+    height: 545px;
     object-fit: cover;
   }
 `
@@ -21,7 +22,7 @@ const Title = styled.h2`
 
 export default () => (
     <Layout>
-      <section className="section">
+      <section>
         <div className="container">
           <Hero>
             <img src="/static/top.jpg"/>
@@ -33,7 +34,7 @@ export default () => (
         <div className="container">
           <div className="columns is-vcentered">
             <div className="column is-3">
-              <Title className="h3">News</Title>
+              <Heading title="NEWS" />
             </div>
             <div className="column is-9">
               <div>
@@ -52,7 +53,7 @@ export default () => (
       <div className="p-live">
         <section className="section p-liveWrap">
           <div className="container">
-            <h2 className="u-text-align">Live</h2>
+            <Heading title="LIVE" />
             <div className="columns">
               {
                 lives && lives.map(live => (
@@ -71,7 +72,7 @@ export default () => (
 
       <section className="section">
         <div className="container">
-          <h2 className="u-text-align">VIDEO</h2>
+          <Heading title="VIDEO" />
           <div className="columns">
             {
               movies && movies.map(movie => (

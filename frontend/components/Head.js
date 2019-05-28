@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
+import { fontFamilyAntiqu } from './atoms/snippets';
+
 const Brand = styled.div`
   text-align: center;
   margin-top: 20px;
   & img {
     height: 100px;
   }
+`;
+
+const NavItemLink = styled.a`
+  ${fontFamilyAntiqu}
+  font-size: 1.2rem;
 `;
 
 export default() => (
@@ -25,24 +32,24 @@ export default() => (
 
         <div className="navbar-menu">
           <div className="navbar-start l-layoutHeader__nav">
-            <a className="navbar-item">
+            <NavItemLink className="navbar-item">
               NEWS
-            </a>
-            <a className="navbar-item">
+            </NavItemLink>
+            <NavItemLink className="navbar-item">
               LIVE
-            </a>
-            <a className="navbar-item">
+            </NavItemLink>
+            <NavItemLink className="navbar-item">
               VIDEO
-            </a>
-            <a className="navbar-item">
+            </NavItemLink>
+            <NavItemLink className="navbar-item">
               MARCH
-            </a>
-            <a className="navbar-item">
+            </NavItemLink>
+            <NavItemLink className="navbar-item">
               BIOGRAPHY
-            </a>
-            <a className="navbar-item">
+            </NavItemLink>
+            <NavItemLink className="navbar-item">
               CONTACT
-            </a>
+            </NavItemLink>
           </div>
         </div>
       </nav>
