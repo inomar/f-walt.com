@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const LiveWrap = styled.div`
   border-left: 1px solid #FFF;
   padding: 10px 15px;
+  font-weight: bold;
 `;
 
 const Date = styled.time`

@@ -2,12 +2,13 @@
 import Button from '../atoms/Button';
 import Heading from '../atoms/Heading';
 import Topic from '../molecules/Topic';
+import { Container } from '../atoms/Shared';
 
 const News = ({ news }) => {
 
   return (
     <section className="section is-medium">
-        <div className="container">
+        <Container className="container">
           <div className="columns is-vcentered">
             <div className="column is-3">
               <Heading title="NEWS" />
@@ -23,7 +24,7 @@ const News = ({ news }) => {
           <div className="u-text-align">
             <Button title="Show All" />
           </div>
-        </div>
+        </Container>
       </section>
   )
 };

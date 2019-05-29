@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
 import Live from '../molecules/Live';
+import { Container } from '../atoms/Shared';
 
 const Wrap = styled.div`
   background: url(/static/top.jpg) no-repeat center center / cover;
@@ -17,7 +18,7 @@ const Lives = ({ lives }) => {
   return (
     <Wrap>
       <section className="section is-medium wrapColor">
-        <div className="container">
+        <Container className="container">
           <Heading title="LIVE" />
           <div className="columns">
             {
@@ -31,7 +32,7 @@ const Lives = ({ lives }) => {
           <div className="u-text-align">
             <Button title="Show All" />
           </div>
-        </div>
+        </Container>
       </section>
     </Wrap>
   )

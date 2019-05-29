@@ -4,20 +4,14 @@ $section-padding-medium: 6rem 1.5rem; // 9rem 1.5rem
 
 @import '../node_modules/bulma/bulma';
 
-html,body {
-  color: #FFF;
-  background-color: $black;
-}
-
-
-.l-layout {
-  &Header {
-    background-color: $black !important;
-    &__nav {
-      margin: 0 auto;
-    }
-  }
-}
+// .l-layout {
+//   &Header {
+//     background-color: $black !important;
+//     &__nav {
+//       margin: 0 auto;
+//     }
+//   }
+// }
 
 .p-header {
   &Logo {

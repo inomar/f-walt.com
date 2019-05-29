@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
 import Video from '../molecules/Video';
+import { Container } from '../atoms/Shared';
 
 const Videos = ({ videos }) => {
   return (
     <section className="section is-medium">
-      <div className="container">
+      <Container className="container">
         <Heading title="VIDEO" />
         <div className="columns">
           {
@@ -21,7 +22,7 @@ const Videos = ({ videos }) => {
         <div className="u-text-align">
             <Button title="Show All" />
           </div>
-      </div>
+      </Container>
     </section>
   )
 };

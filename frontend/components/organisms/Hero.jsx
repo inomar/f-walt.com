@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Container } from '../atoms/Shared';
+
 const HeroImage = styled.div`
   text-align: center;
   & img {
@@ -11,11 +13,11 @@ const HeroImage = styled.div`
 
 const Hero = () => (
   <section>
-    <div className="container">
+    <Container className="container">
       <HeroImage>
         <img src="/static/top.jpg"/>
       </HeroImage>
-    </div>
+    </Container>
   </section>
 );
 
