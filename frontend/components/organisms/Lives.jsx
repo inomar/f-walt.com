@@ -16,7 +16,7 @@ const Lives = ({ lives }) => {
   
   return (
     <Wrap>
-      <section className="section wrapColor">
+      <section className="section is-medium wrapColor">
         <div className="container">
           <Heading title="LIVE" />
           <div className="columns">

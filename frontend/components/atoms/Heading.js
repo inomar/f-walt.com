@@ -5,7 +5,7 @@ const Title = styled.h2`
   ${fontFamilyAntiqu}
   text-align: center;
   font-size: 2rem;
-  margin: 10px 0;
+  margin: 10px 0 20px;
 `;
 
 const Heading = ({title}) => (

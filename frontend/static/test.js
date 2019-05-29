@@ -28,19 +28,19 @@ export const lives = [
   }
 ];
 
-export const movies = [
+export const videos = [
   {
-    movieId: 'W3q8Od5qJio',
+    videoId: 'W3q8Od5qJio',
   },
   {
-    movieId: 'yMMz2VwbhVI', 
+    videoId: 'yMMz2VwbhVI', 
   },
   {
-    movieId: 'GvD3CHA48pA',
+    videoId: 'GvD3CHA48pA',
   }
-]
+];
 
 export const spotifyUri = 'spotify:album:4INtUvPabb6IPrfqOHeW9u';
 export const twitterScreenName = 'f_walt_jp';
-export const twitterUrl = 'https://twitter.com/f_walt_jp'
-export const instagramUrl = 'https://www.instagram.com/f_walt_jp/'
+export const twitterUrl = 'https://twitter.com/f_walt_jp';
+export const instagramUrl = 'https://www.instagram.com/f_walt_jp/';

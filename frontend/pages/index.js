@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Topic from '../components/Topic';
-import Movie from '../components/organisms/Movie';
+import Movie from '../components/molecules/Video';
 import Button from '../components/atoms/Button';
 import Heading from '../components/atoms/Heading';
+import Videos from '../components/organisms/Videos';
 import Lives from '../components/organisms/Lives';
 import Media from '../components/organisms/Media';
 
-import { lives, movies } from '../static/test'; 
+import { lives, videos } from '../static/test'; 
 
 const Hero = styled.div`
   text-align: center;
@@ -17,10 +18,6 @@ const Hero = styled.div`
     object-fit: cover;
   }
 `
-
-const Title = styled.h2`
-  text-align: center;
-`;
 
 export default () => (
     <Layout>
@@ -32,7 +29,7 @@ export default () => (
         </div>
       </section>
 
-      <section className="section">
+      <section className="section is-medium">
         <div className="container">
           <div className="columns is-vcentered">
             <div className="column is-3">
@@ -52,28 +49,8 @@ export default () => (
         </div>
       </section>
 
-
       <Lives lives={lives} />
-
-      <section className="section">
-        <div className="container">
-          <Heading title="VIDEO" />
-          <div className="columns">
-            {
-              movies && movies.map(movie => (
-                <div className="column" >
-                  <Movie movieId={movie.movieId} />
-                </div>
-              ))
-            }
-          </div>
-          <div className="u-text-align">
-              <Button title="Show All" />
-            </div>
-        </div>
-      </section>
-
+      <Videos videos={videos} />
       <Media />
-
     </Layout>
 );

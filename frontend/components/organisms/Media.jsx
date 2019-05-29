@@ -15,7 +15,7 @@ const Box = styled.div`
 
 const Media = () => {
   return (
-    <section className="section">
+    <section className="section is-medium">
       <div className="container">
         <div className="tile is-ancestor">
           <div className="tile is-6 is-parent is-vertical">
