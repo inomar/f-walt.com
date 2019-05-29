@@ -42,3 +42,5 @@ export const movies = [
 
 export const spotifyUri = 'spotify:album:4INtUvPabb6IPrfqOHeW9u';
 export const twitterScreenName = 'f_walt_jp';
+export const twitterUrl = 'https://twitter.com/f_walt_jp'
+export const instagramUrl = 'https://www.instagram.com/f_walt_jp/'
