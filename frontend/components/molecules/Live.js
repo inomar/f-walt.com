@@ -26,6 +26,11 @@ const MoreWrap = styled.div`
   }
 `;
 
+const ArrowIcon = styled.span`
+  vertical-align: middle;
+  font-size: .8rem;
+`;
+
 const Live = (props) => {
   const { date, live_house, title, ticket, acts, open, start } = props.live;
   const year = `${moment(date).format('YYYY')}`;
@@ -45,7 +50,7 @@ const Live = (props) => {
         <p>open: {live_open} start: {live_start}</p>
       </div>
       <MoreWrap>
-        <a href="#">more</a>
+        <a href="#">more <ArrowIcon className="icon"><i class="fas fa-chevron-right"></i></ArrowIcon></a>
       </MoreWrap>
     </LiveWrap>
   )

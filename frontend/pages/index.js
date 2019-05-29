@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import Topic from '../components/Topic';
-import Live from '../components/organisms/Live';
 import Movie from '../components/organisms/Movie';
 import Button from '../components/atoms/Button';
 import Heading from '../components/atoms/Heading';
-import MusicPlayer from '../components/atoms/MusicPlayer';
+import Lives from '../components/organisms/Lives';
+import Media from '../components/organisms/Media';
+
+import { lives, movies } from '../static/test'; 
 
 const Hero = styled.div`
   text-align: center;
@@ -50,25 +52,8 @@ export default () => (
         </div>
       </section>
 
-      <div className="p-live">
-        <section className="section p-liveWrap">
-          <div className="container">
-            <Heading title="LIVE" />
-            <div className="columns">
-              {
-                lives && lives.map(live => (
-                  <div className="column">
-                    <Live live={live} />
-                  </div>
-                ))
-              }
-            </div>
-            <div className="u-text-align">
-              <Button title="Show All" />
-            </div>
-          </div>
-        </section>
-      </div>
+
+      <Lives lives={lives} />
 
       <section className="section">
         <div className="container">
@@ -88,54 +73,7 @@ export default () => (
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <MusicPlayer />
-        </div>
-      </section>
+      <Media />
 
     </Layout>
 );
-
-
-const lives = [
-  {
-    date: '2019-05-03 18:00:00',
-    live_house: 'さいたまスーパーアリーナ',
-    title: 'Big4 live',
-    acts: ['メタリカ', 'アンスラックス', 'スラッシュ', 'メガデス'],
-    ticket: 2500,
-    open: '2019-05-03 18:00:00',
-    start: '2019-05-03 19:00:00'
-  },
-  {
-    date: '2019-05-03 18:00:00',
-    live_house: 'さいたまスーパーアリーナ',
-    title: 'Big4 live',
-    acts: ['メタリカ', 'アンスラックス', 'スラッシュ', 'メガデス'],
-    ticket: 2500,
-    open: '2019-05-03 18:00:00',
-    start: '2019-05-03 19:00:00'
-  },
-  {
-    date: '2019-05-03 18:00:00',
-    live_house: 'さいたまスーパーアリーナ',
-    title: 'Big4 live',
-    acts: ['メタリカ', 'アンスラックス', 'スラッシュ', 'メガデス'],
-    ticket: 2500,
-    open: '2019-05-03 18:00:00',
-    start: '2019-05-03 19:00:00'
-  }
-];
-
-const movies = [
-  {
-    movieId: 'W3q8Od5qJio',
-  },
-  {
-    movieId: 'yMMz2VwbhVI', 
-  },
-  {
-    movieId: 'GvD3CHA48pA',
-  }
-]

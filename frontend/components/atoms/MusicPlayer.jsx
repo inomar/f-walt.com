@@ -1,5 +1,6 @@
+import SpotifyPlayer from 'react-spotify-player';
 
-const MusicPlayer = () => {
+export const AppleMusicPlayer = () => {
   return (
     <iframe 
       allow="autoplay *; encrypted-media *;"
@@ -12,4 +13,17 @@ const MusicPlayer = () => {
   )
 }
 
-export default MusicPlayer;
+export const SpotifyMusicPlayer = ({ uri }) => {
+  const size = {
+    width: '100%',
+    height: 300,
+  };
+  return (
+    <SpotifyPlayer
+      uri={uri}
+      size={size}
+      view="list"
+      theme="black"
+    />
+  )
+}
