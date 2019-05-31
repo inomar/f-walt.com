@@ -1,6 +1,6 @@
 set_up:
   addons:
-    plan: mongolab:free
-    as: DATABASE
+    - plan: mongolab:free
+      as: DATABASE
 run:
   frontend: yarn start
