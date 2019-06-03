@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { TwitterIcon, InstagramIcon } from '../components/atoms/Icon';
-import CopyRight from '../components/atoms/CopyRight';
+import { TwitterIcon, InstagramIcon } from './atoms/Icon';
+import CopyRight from './atoms/CopyRight';
 
 import { twitterUrl, instagramUrl} from '../static/test';
 

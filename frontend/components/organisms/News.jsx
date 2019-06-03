@@ -16,7 +16,7 @@ const News = ({ news }) => {
             <div className="column is-9">
               {
                 news && news.map(item => (
-                  <Topic topic={item} />
+                  <Topic key={item.id} topic={item} />
                 ))
               }
             </div>

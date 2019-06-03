@@ -1,15 +1,18 @@
 export const news = [
   {
+    id: 1,
     date: '2019-05-03 18:00:00',
     title: 'さいたまスーパーアリーナ公園が決定しました。',
     body: 'さいたますーぱーありーなでお待ちします。'
   },
   {
+    id:2,
     date: '2019-05-03 18:00:00',
     title: 'さいたまスーパーアリーナ公園が決定しました。',
     body: 'さいたますーぱーありーなでお待ちします。'
   },
   {
+    id: 3,
     date: '2019-05-03 18:00:00',
     title: 'さいたまスーパーアリーナ公園が決定しました。',
     body: 'さいたますーぱーありーなでお待ちします。'
@@ -18,6 +21,7 @@ export const news = [
 
 export const lives = [
   {
+    id: 'a',
     date: '2019-05-03 18:00:00',
     live_house: 'さいたまスーパーアリーナ',
     title: 'Big4 live',
@@ -27,6 +31,7 @@ export const lives = [
     start: '2019-05-03 19:00:00'
   },
   {
+    id: 'b',
     date: '2019-05-03 18:00:00',
     live_house: 'さいたまスーパーアリーナ',
     title: 'Big4 live',
@@ -36,6 +41,7 @@ export const lives = [
     start: '2019-05-03 19:00:00'
   },
   {
+    id: 'c',
     date: '2019-05-03 18:00:00',
     live_house: 'さいたまスーパーアリーナ',
     title: 'Big4 live',

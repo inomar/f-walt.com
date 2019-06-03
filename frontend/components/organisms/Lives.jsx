@@ -24,7 +24,7 @@ const Lives = ({ lives }) => {
             {
               lives && lives.map(live => (
                 <div className="column">
-                  <Live live={live} />
+                  <Live key={live.id} live={live} />
                 </div>
               ))
             }
