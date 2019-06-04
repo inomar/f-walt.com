@@ -33,7 +33,8 @@ services:
       - ./db-data:/docker-entrypoint-initdb.d
 
   frontend:
-    image: node:10
+    # image: node:10
+    build: ./frontend
     ports:
       - 3000:3000
     links:
@@ -43,6 +44,6 @@ services:
     environment:
       WP_URL: "http://wp-api:80"
     restart: always
-    working_dir: /usr/local/app
+    # working_dir: /usr/local/app
     entrypoint: "/bin/bash"
     command: "-c \"if [ ! -d \"node_modules\" ]; then yarn; fi; yarn dev\""

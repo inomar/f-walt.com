@@ -1,6 +1,3 @@
-set_up:
-  addons:
-    - plan: jawsdb:free
-      as: DATABASE
-run:
-  frontend: yarn start
+build:
+  docker:
+    frontend: frontend/Dockerfile
