@@ -33,22 +33,20 @@ const ArrowIcon = styled.span`
 `;
 
 const Live = (props) => {
-  const { date, live_house, title, ticket, acts, open, start } = props.live;
+  const { date, club, title, ticket, act, open, start } = props.live;
   const year = `${moment(date).format('YYYY')}`;
   const month_date = `${moment(date).format('MM/DD')}`;
-  const live_open = `${moment(open).format('HH:mm')}`;
-  const live_start = `${moment(start).format('HH:mm')}`;
   return (
     <LiveWrap>
       <Date>{year}.<span>{month_date}</span></Date>
       <div>
-        <p>{live_house}</p>
+        <p>{club}</p>
         <Title>{title}</Title>
         <p>
-          acts: { acts && acts.join('/')}
+          act: { act }
         </p>
         <p>ticket: ¥{ticket}</p>
-        <p>open: {live_open} start: {live_start}</p>
+        <p>open: {open} start: {start}</p>
       </div>
       <MoreWrap>
         <a href="#">more <ArrowIcon className="icon"><i class="fas fa-chevron-right"></i></ArrowIcon></a>
