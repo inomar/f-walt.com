@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
 import Video from '../molecules/Video';
-import { Container } from '../atoms/Shared';
+import { Container } from '../atoms/style';
 
 const Videos = ({ videos }) => {
   return (

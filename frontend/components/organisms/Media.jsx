@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AppleMusicPlayer, SpotifyMusicPlayer }  from '../atoms/MusicPlayer';
 import TwitterEmbed from '../atoms/TwitterEmbed';
 import InstgramEmbed from '../atoms/InstagramEmbed';
-import { Container } from '../atoms/Shared';
+import { Container } from '../atoms/style';
 
 import { spotifyUri, twitterScreenName } from '../../static/test';
 

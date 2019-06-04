@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { fontFamilyAntiqu } from './atoms/snippets';
 import Color from './atoms/Color';
-import { Container } from './atoms/shared';
+import { Container } from './atoms/style';
 
 export default() => (
   <header>

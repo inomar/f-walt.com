@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Container } from '../atoms/Shared';
+import { Container } from '../atoms/style';
 
 const HeroImage = styled.div`
   text-align: center;
