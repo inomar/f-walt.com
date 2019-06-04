@@ -2,7 +2,7 @@
 import Button from '../atoms/Button';
 import Heading from '../atoms/Heading';
 import Topic from '../molecules/Topic';
-import { Container } from '../atoms/Shared';
+import { Container } from '../atoms/style';
 
 const News = ({ news }) => {
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
 import Live from '../molecules/Live';
-import { Container } from '../atoms/Shared';
+import { Container } from '../atoms/style';
 
 const Wrap = styled.div`
   background: url(/static/top.jpg) no-repeat center center / cover;
