@@ -3,6 +3,7 @@ FROM node:10
 WORKDIR /usr/local/app
 
 COPY package.json .
+COPY package-lock.json .
 
 RUN yarn
 
