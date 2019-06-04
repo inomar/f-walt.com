@@ -4,7 +4,7 @@ WORKDIR /usr/local/app
 
 COPY package.json .
 
-RUN yarn
+RUN yarn && yarn build
 
 COPY . .
 
