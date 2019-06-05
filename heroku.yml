@@ -1,7 +1,7 @@
+setup:
+  addons:
+    - plan: jawsdb:kitefin
+      as: DATABASE
 build:
   docker:
-    frontend: frontend/Dockerfile
     wordpress: wordpress/Dockerfile
-  config:
-    NODE_ENV: production
-    PORT: 80
