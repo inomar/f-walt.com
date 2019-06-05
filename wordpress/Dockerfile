@@ -5,6 +5,8 @@ ENV WORDPRESS_DB_USER wp_user
 ENV WORDPRESS_DB_PASSWORD database_password
 ENV WORDPRESS_DB_NAME wordpress
 
+RUN chown -R www-data:www-data /usr/src/wordpress/wp-content
+
 WORKDIR /var/www/html
 
 COPY plugins /wp-content/plugins
