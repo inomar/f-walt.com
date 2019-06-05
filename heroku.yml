@@ -4,4 +4,4 @@ setup:
       as: DATABASE
 build:
   docker:
-    wordpress: wordpress/Dockerfile
+    web: wordpress/Dockerfile
