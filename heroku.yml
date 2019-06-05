@@ -5,5 +5,3 @@ setup:
 build:
   docker:
     wordpress: wordpress/Dockerfile
-run:
-  wordpress: docker run
