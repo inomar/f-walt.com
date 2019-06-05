@@ -1,6 +1,6 @@
 setup:
   addons:
-    - plan: jawsdb:kitefin
+    - plan: jawsdb
       as: DATABASE
 build:
   docker:
