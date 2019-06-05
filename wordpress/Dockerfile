@@ -1,5 +1,7 @@
 FROM wordpress
 
+COPY ./config/ports.conf /etc/apache2/ports.conf
+
 WORKDIR /usr/src/wordpress/wp-content
 
 COPY plugins plugins
