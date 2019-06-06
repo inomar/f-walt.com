@@ -7,14 +7,6 @@ import Button from '../atoms/Button';
 import Live from '../molecules/Live';
 import { Container } from '../atoms/style';
 
-const Wrap = styled.div`
-    /* background: url(/static/background.jpg) no-repeat center center / cover;
-    background-attachment: fixed; */ */
-  & .wrapColor {
-    background-color: rgba(0,0,0,.5);
-  }
-`
-
 const LiveWrap = styled.div`
   .Live {
     border-left: 1px solid #FFF;
