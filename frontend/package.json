@@ -27,6 +27,7 @@
     "recompose": "^0.30.0",
     "styled-components": "^4.2.0",
     "styled-media-query": "^2.1.1",
+    "superagent": "^5.0.6",
     "wpapi": "^1.2.1"
   },
   "devDependencies": {
