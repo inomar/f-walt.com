@@ -1,4 +1,3 @@
-
 import Button from '../atoms/Button';
 import Heading from '../atoms/Heading';
 import Topic from '../molecules/Topic';

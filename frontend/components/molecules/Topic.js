@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import moment from 'moment';
 
 
@@ -8,13 +9,20 @@ const Content = styled.div`
   margin-bottom: 30px;
 `;
 
+const PublishedAt = styled.time`
+  ${media.lessThan('medium')`
+    padding-top: 0;
+    padding-bottom: 0;
+  `}
+`;
+
 const Topic = ({ topic }) => {
   const { date, title } = topic;
   const published_at = `${moment(date).format('YYYY.MM.DD')}`;
   return (
     <Content>
       <div className="columns">
-        <time className="column is-2">{published_at}</time>
+        <PublishedAt className="column is-2">{published_at}</PublishedAt>
         <p className="column is-10">{title}</p>
       </div>
     </Content>
