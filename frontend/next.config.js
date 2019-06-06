@@ -16,5 +16,5 @@ module.exports = withSass({
     };
     return config;
   },
-  targets: 'serverless',
+  target: 'serverless',
 });

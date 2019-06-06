@@ -7,7 +7,7 @@ import Live from '../molecules/Live';
 import { Container } from '../atoms/style';
 
 const Wrap = styled.div`
-  background: url(/static/top.jpg) no-repeat center center / cover;
+  background: url(/static/background.jpg) no-repeat center center / cover;
   background-attachment: fixed;
   & .wrapColor {
     background-color: rgba(0,0,0,.5);
