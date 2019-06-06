@@ -1,10 +1,19 @@
 import moment from 'moment';
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 const LiveWrap = styled.div`
-  border-left: 1px solid #FFF;
   padding: 10px 15px;
   font-weight: bold;
+  ${media.lessThan('medium')`
+    border: none;
+  `}
+  h3 {
+    margin-bottom: 10px;
+  }
+  p, h3 {
+    margin-top: 5px;
+  }
 `;
 
 const Date = styled.time`
@@ -41,7 +50,7 @@ const Live = (props) => {
       <Date>{year}.<span>{month_date}</span></Date>
       <div>
         <p>
-          <i className="fas fa-map-marker-alt"></i>&nbsp;
+          <i className="fas fa-cube"></i>&nbsp;
           {club}
         </p>
         <Title>{title}</Title>
@@ -49,7 +58,7 @@ const Live = (props) => {
           act: { act }
         </p>
         <p>ticket: ¥{ticket}</p>
-        <p>open: {open} start: {start}</p>
+        <p>open: {open} &nbsp; start: {start}</p>
       </div>
       <MoreWrap>
         <a href="#">more <ArrowIcon className="icon"><i class="fas fa-chevron-right"></i></ArrowIcon></a>

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start -p 8000"
   },
   "dependencies": {
     "@animated-burgers/burger-slip": "^1.1.2",

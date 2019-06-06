@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
@@ -13,6 +14,22 @@ const Wrap = styled.div`
   }
 `
 
+const LiveWrap = styled.div`
+  .Live {
+    border-left: 1px solid #FFF;
+    &:last-child {
+      border-right: 1px solid #FFF;
+    }
+    ${media.lessThan('medium')`
+      border: none;
+      border-bottom: 1px solid #FFF;
+      &:last-child {
+        border: none;
+      }
+    `}
+  }
+`;
+
 const Lives = ({ lives }) => {
   
   return (
@@ -20,15 +37,15 @@ const Lives = ({ lives }) => {
       <section className="section is-medium wrapColor">
         <Container className="container">
           <Heading title="LIVE" />
-          <div className="columns">
+          <LiveWrap className="columns">
             {
               lives && lives.map(live => (
-                <div className="column">
+                <div className="column Live">
                   <Live key={live.id} live={live} />
                 </div>
               ))
             }
-          </div>
+          </LiveWrap>
           <div className="u-text-align">
             <Button title="Show All" />
           </div>
