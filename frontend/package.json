@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "start": "NODE_ENV=production node server.js",
     "now-build": "next build",
-    "start": "next start -p 8000"
+    "now-deploy": "now --target production"
   },
   "dependencies": {
     "@animated-burgers/burger-slip": "^1.1.2",
