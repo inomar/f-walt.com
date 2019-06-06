@@ -1,6 +1,9 @@
 {
   "version": 2,
   "alias": ["fwalt.now.sh"],
+  "env": {
+    "WP_URL": "@wp-url"
+  },
   "builds": [
     { 
       "src": "package.json",

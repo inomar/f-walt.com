@@ -9,10 +9,8 @@ $menu-label-font-size: 1.2em;
 @import '../node_modules/bulma/bulma';
 @import '../node_modules/@animated-burgers/burger-slip/dist/styles.css';
 
-.p-header {
-  &Logo {
-    text-align: center;
-  }
+.u-bg__filter {
+  background-color: rgba(0,0,0, .4);
 }
 
 .u-text-align {

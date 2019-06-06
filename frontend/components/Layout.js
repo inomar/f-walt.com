@@ -13,11 +13,13 @@ export default ({ children }) => (
     <Head>
       <link rel="stylesheet" href="https://use.typekit.net/rqc6rtq.css" />
       <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <script src="assets/js/rellax.min.js"></script>
     </Head>
     <GlobalStyle />
     <Header />
     {children}
     <Footer />
+    <script>var rellax = new Rellax('.rellax');</script>
   </div>
 );
 

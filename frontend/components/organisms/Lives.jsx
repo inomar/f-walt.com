@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { Parallax, Background } from 'react-parallax';
 
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
@@ -7,8 +8,8 @@ import Live from '../molecules/Live';
 import { Container } from '../atoms/style';
 
 const Wrap = styled.div`
-  background: url(/static/background.jpg) no-repeat center center / cover;
-  background-attachment: fixed;
+    /* background: url(/static/background.jpg) no-repeat center center / cover;
+    background-attachment: fixed; */ */
   & .wrapColor {
     background-color: rgba(0,0,0,.5);
   }
@@ -33,7 +34,13 @@ const LiveWrap = styled.div`
 const Lives = ({ lives }) => {
   
   return (
-    <Wrap>
+    <Parallax
+      bgImage={'/static/background.jpg'}
+      bgImageAlt="fwalt live"
+      strength={500}
+      contentClassName="u-bg__filter"
+      bgImageStyle={{ objectFit: 'cover' }}
+    >
       <section className="section is-medium wrapColor">
         <Container className="container">
           <Heading title="LIVE" />
@@ -51,7 +58,7 @@ const Lives = ({ lives }) => {
           </div>
         </Container>
       </section>
-    </Wrap>
+    </Parallax>
   )
 };
 
