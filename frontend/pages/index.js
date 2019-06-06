@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-unfetch';
 import WPAPI from 'wpapi';
 
 import Layout from '../components/Layout';
