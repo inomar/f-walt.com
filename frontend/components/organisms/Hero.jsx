@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 import { Container } from '../atoms/style';
 
@@ -8,6 +9,9 @@ const HeroImage = styled.div`
     width: 100%;
     height: 545px;
     object-fit: cover;
+    ${media.lessThan("medium")`
+      height: 350px;
+    `}
   }
 `;
 
