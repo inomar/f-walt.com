@@ -40,7 +40,10 @@ const Live = (props) => {
     <LiveWrap>
       <Date>{year}.<span>{month_date}</span></Date>
       <div>
-        <p>{club}</p>
+        <p>
+          <i className="fas fa-map-marker-alt"></i>&nbsp;
+          {club}
+        </p>
         <Title>{title}</Title>
         <p>
           act: { act }
