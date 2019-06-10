@@ -20,7 +20,7 @@ const Videos = ({ videos }) => {
           }
         </div>
         <div className="u-text-align">
-            <Button title="Show All" />
+            <Button title="Show All" href="/video"/>
           </div>
       </Container>
     </section>

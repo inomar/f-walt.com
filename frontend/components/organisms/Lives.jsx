@@ -46,7 +46,7 @@ const Lives = ({ lives }) => {
             }
           </LiveWrap>
           <div className="u-text-align">
-            <Button title="Show All" />
+            <Button title="Show All" href="/live" />
           </div>
         </Container>
       </section>

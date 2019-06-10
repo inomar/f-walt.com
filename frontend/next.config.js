@@ -15,6 +15,7 @@ module.exports = withSass({
       poll: 1000,
       aggregateTimeout: 300,
     };
+    config.plugins.push(new webpack.DefinePlugin({ "global.GENTLY": false }));
     return config;
   },
   target: 'serverless',

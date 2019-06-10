@@ -1,16 +1,19 @@
 import styled, { keyframes } from 'styled-components';
+import Link from 'next/link';
 
-const Button = ({title}) => {
+const Button = ({title, href, as = null}) => {
   return (
-    <Btn type="button" className="button">
-      {title}
-    </Btn>
+    <Link href={href} as={as} >
+      <Btn className="button">
+        {title}
+      </Btn>
+    </Link>
   )
 }
 
 export default Button;
 
-const Btn = styled.button`
+const Btn = styled.a`
   font-size: 1rem;
   padding: 0 50px;
   background-color: transparent;
