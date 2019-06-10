@@ -2,6 +2,8 @@ import moment from 'moment';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
+import { FullDate } from '../atoms/Date';
+
 const LiveWrap = styled.div`
   padding: 10px 15px;
   font-weight: bold;
@@ -47,7 +49,7 @@ const Live = (props) => {
   const month_date = `${moment(date).format('MM/DD')}`;
   return (
     <LiveWrap>
-      <Date>{year}.<span>{month_date}</span></Date>
+      <FullDate date={date} />
       <div>
         <p>
           <i className="fas fa-cube"></i>&nbsp;

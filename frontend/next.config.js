@@ -1,4 +1,5 @@
 const withSass = require('@zeit/next-sass');
+
 module.exports = withSass({
   webpack (config, { buildId, dev, isServer, defaultLoaders, webpack }) {
     config.module.rules.push({
@@ -14,7 +15,6 @@ module.exports = withSass({
       poll: 1000,
       aggregateTimeout: 300,
     };
-    config.plugins.push(new webpack.DefinePlugin({ "global.GENTLY": false }));
     return config;
   },
   target: 'serverless',

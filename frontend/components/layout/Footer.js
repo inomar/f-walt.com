@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { TwitterIcon, InstagramIcon } from './atoms/Icon';
-import CopyRight from './atoms/CopyRight';
+import { TwitterIcon, InstagramIcon } from '../atoms/Icon';
+import CopyRight from '../atoms/CopyRight';
 
-import { twitterUrl, instagramUrl} from '../static/test';
+import { twitterUrl, instagramUrl} from '../../static/test';
 
 const Section = styled.section`
   border-top: 1px solid #FFF;

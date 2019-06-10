@@ -1,14 +1,35 @@
 import React, { Component } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
 import Burger from '@animated-burgers/burger-slip';
 
-import { fontFamilyAntiqu } from './atoms/snippets';
-import Color from './atoms/Color';
-import { Container } from './atoms/style';
+import { fontFamilyAntiqu } from '../atoms/snippets';
+import Color from '../atoms/Color';
+import { Container } from '../atoms/style';
 
-const Menu = ['NEWS', 'LIVE', 'VIDEO', 'MARCH', 'BIOGRAPHY', 'CONTACT'];
+const Menu = [ 
+  {
+    name: 'NEWS',
+    href: '/news',
+  }, {
+    name: 'LIVE',
+    href: '/live',
+  }, {
+    name: 'VIDEO',
+    href: '/video',
+  }, {
+    name: 'MARCH',
+    href: '/march',
+  }, {
+    name: 'BIOGRAPHY',
+    href: '/biography',
+  }, {
+    name: 'CONTACT',
+    href: '/contact',
+  },
+];
 
 export default class Head extends Component {
   constructor(props) {
@@ -29,13 +50,22 @@ export default class Head extends Component {
     return (
       <header>
         <Brand>
-          <img src="/static/logo.png" />
+          <Link href="/">
+            <a><img src="/static/logo.png" /></a>
+          </Link>
         </Brand>
         <Container className="container">
           <Nav>
             <NavItems>
               {
-                Menu.map(menu => <NavItemLink>{menu}</NavItemLink>)
+                Menu.map(menu => {
+                  const { href, name } = menu;
+                  return (
+                    <NavItem>
+                      <Link href={href}>{name}</Link>
+                    </NavItem>
+                  )
+                })
               }
             </NavItems>
           </Nav>
@@ -49,7 +79,7 @@ export default class Head extends Component {
             <ModalMenu className="menu">
               <ul className="menu-list">
                 {
-                  Menu.map(menu => <li><a>{menu}</a></li>)
+                  Menu.map(menu => <li><Link href={menu.href}>{menu.name}</Link></li>)
                 }
               </ul>
             </ModalMenu>
@@ -93,22 +123,22 @@ const NavItems = styled.div`
   justify-content: space-between;
 `;
 
+const NavItem = styled.div`
+${fontFamilyAntiqu}
+  font-size: 1.5rem;
+  padding: 20px 0;
+  line-height: 0.5;
+`;
+
 const Brand = styled.div`
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
   & img {
-    height: 130px;
+    height: 120px;
     ${media.lessThan("medium")`
       height: 80px;
     `}
   }
-`;
-
-const NavItemLink = styled.a`
-  ${fontFamilyAntiqu}
-  font-size: 1.5rem;
-  padding: 20px 0;
-  line-height: 0.5;
 `;
 
 const ModalMenu = styled.aside`

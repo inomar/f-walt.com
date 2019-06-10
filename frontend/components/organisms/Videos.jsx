@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import Heading from '../atoms/Heading';
 import Button from '../atoms/Button';
-import Video from '../molecules/Video';
+import Movie from '../molecules/Movie';
 import { Container } from '../atoms/style';
 
 const Videos = ({ videos }) => {
@@ -14,7 +14,7 @@ const Videos = ({ videos }) => {
           {
             videos && videos.map(video => (
               <div className="column" >
-                <Video videoId={video.videoId} />
+                <Movie videoId={video.videoId} />
               </div>
             ))
           }

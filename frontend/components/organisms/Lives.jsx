@@ -29,7 +29,7 @@ const Lives = ({ lives }) => {
     <Parallax
       bgImage={'/static/background.jpg'}
       bgImageAlt="fwalt live"
-      strength={500}
+      strength={600}
       contentClassName="u-bg__filter"
       bgImageStyle={{ objectFit: 'cover' }}
     >

@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { fontFamily } from './atoms/snippets';
-import Color from './atoms/Color';
+import { fontFamily } from '../atoms/snippets';
+import Color from '../atoms/Color';
 
-import '../styles/style.scss';
+import '../../styles/style.scss';
 import Head from 'next/head';
 import Header from './Head';
 import Footer from './Footer';

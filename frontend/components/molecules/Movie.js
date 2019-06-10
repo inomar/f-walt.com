@@ -25,7 +25,7 @@ const opts = {
   },
 };
 
-const Video = ({videoId}) => {
+const Movie = ({videoId}) => {
   return (
     <MovieWrap key={videoId}>
       <YouTube
@@ -42,4 +42,4 @@ const onReady = (event) => {
 }
 
 
-export default Video;
+export default Movie;

@@ -1,6 +1,6 @@
 import WPAPI from 'wpapi';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import Hero from '../components/organisms/Hero';
 import News from '../components/organisms/News';
 import Videos from '../components/organisms/Videos';
