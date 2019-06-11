@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["fwalt.now.sh"],
+  "alias": ["fwalt.now.sh", "f-walt.com"],
   "env": {
     "WP_URL": "@wp-url"
   },

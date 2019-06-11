@@ -146,10 +146,15 @@ jQuery( function ( $ ) {
 		} );
 	} );
 
-	$('.checkforspam:not(.button-disabled)').click( function(e) {
+	$( '.checkforspam' ).click( function( e ) {
 		e.preventDefault();
 
-		$('.checkforspam:not(.button-disabled)').addClass('button-disabled');
+		if ( $( this ).hasClass( 'button-disabled' ) ) {
+			window.location.href = $( this ).data( 'success-url' ).replace( '__recheck_count__', 0 ).replace( '__spam_count__', 0 );
+			return;
+		}
+
+		$('.checkforspam').addClass('button-disabled').addClass( 'checking' );
 		$('.checkforspam-spinner').addClass( 'spinner' ).addClass( 'is-active' );
 
 		// Update the label on the "Check for Spam" button to use the active "Checking for Spam" language.
@@ -162,8 +167,14 @@ jQuery( function ( $ ) {
 	var recheck_count = 0;
 
 	function akismet_check_for_spam(offset, limit) {
+		var check_for_spam_buttons = $( '.checkforspam' );
+		
+		// We show the percentage complete down to one decimal point so even queues with 100k
+		// pending comments will show some progress pretty quickly.
+		var percentage_complete = Math.round( ( recheck_count / check_for_spam_buttons.data( 'pending-comment-count' ) ) * 1000 ) / 10;
+		
 		// Update the progress counter on the "Check for Spam" button.
-		$( '.checkforspam-progress' ).text( $( '.checkforspam' ).data( 'progress-label-format' ).replace( '%1$s', offset ) );
+		$( '.checkforspam-progress' ).text( check_for_spam_buttons.data( 'progress-label-format' ).replace( '%1$s', percentage_complete ) );
 
 		$.post(
 			ajaxurl,
@@ -177,7 +188,7 @@ jQuery( function ( $ ) {
 				spam_count += result.counts.spam;
 				
 				if (result.counts.processed < limit) {
-					window.location.href = $( '.checkforspam' ).data( 'success-url' ).replace( '__recheck_count__', recheck_count ).replace( '__spam_count__', spam_count );
+					window.location.href = check_for_spam_buttons.data( 'success-url' ).replace( '__recheck_count__', recheck_count ).replace( '__spam_count__', spam_count );
 				}
 				else {
 					// Account for comments that were caught as spam and moved out of the queue.
@@ -267,4 +278,31 @@ jQuery( function ( $ ) {
 		var img = new Image();
 		img.src = akismet_mshot_url( linkUrl );
 	}
+
+	/**
+	 * Sets the comment form privacy notice display to hide when one clicks Core's dismiss button on the related admin notice.
+	 */
+	$( '#akismet-privacy-notice-admin-notice' ).on( 'click', '.notice-dismiss', function(){
+		$.ajax({
+                        url: './options-general.php?page=akismet-key-config&akismet_comment_form_privacy_notice=hide',
+		});
+	});
+
+	$( ".akismet-could-be-primary" ).each( function () {
+		var form = $( this ).closest( 'form' );
+
+		form.data( 'initial-state', form.serialize() );
+
+		form.on( 'change keyup', function () {
+			var self = $( this );
+			var submit_button = self.find( ".akismet-could-be-primary" );
+
+			if ( self.serialize() != self.data( 'initial-state' ) ) {
+				submit_button.addClass( "akismet-is-primary" );
+			}
+			else {
+				submit_button.removeClass( "akismet-is-primary" );
+			}
+		} );
+	} );
 });
