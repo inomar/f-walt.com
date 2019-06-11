@@ -2,7 +2,7 @@ import WPAPI from 'wpapi';
 
 class Api {
   constructor() {
-    this.endpoint = new WPAPI({ endpoint: `http://fwalt.cfbx.jp/wp-json` });
+    this.endpoint = new WPAPI({ endpoint: `https://fwalt.cfbx.jp/wp-json` });
   }
 
   news() {
