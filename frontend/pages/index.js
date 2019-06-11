@@ -1,11 +1,16 @@
-import WPAPI from 'wpapi';
-
 import Layout from '../components/layout/Layout';
 import Hero from '../components/organisms/Hero';
 import News from '../components/organisms/News';
 import Videos from '../components/organisms/Videos';
 import Lives from '../components/organisms/Lives';
 import Media from '../components/organisms/Media';
+
+import Api from '../lib/api';
+
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig } = getConfig()
+const { WP_URL } = publicRuntimeConfig
 
 const Index = (props) => {
   const { news, lives, videos } = props;
@@ -21,14 +26,10 @@ const Index = (props) => {
 }
 
 Index.getInitialProps = async function() {
-  const wp = new WPAPI({ endpoint: `${process.env.WP_URL}/wp-json` });
-  wp.news = wp.registerRoute('wp/v2', '/news/(?P<id>[0-9]+)');
-  wp.lives = wp.registerRoute('wp/v2', '/live/(?P<id>[0-9]+)');
-  wp.videos = wp.registerRoute('wp/v2', '/video/(?P<id>[0-9]+)');
-
-  const news = await wp.news().perPage(3).orderby('date').order('desc');
-  const lives = await wp.lives().perPage(3).orderby('date').order('desc');
-  const videos = await wp.videos().perPage(3).orderby('date').order('desc');
+  const api = new Api();
+  const news = await api.news().perPage(3).orderby('date').order('desc');
+  const lives = await api.lives().perPage(3).orderby('date').order('desc');
+  const videos = await api.videos().perPage(3).orderby('date').order('desc');
   return { news: newsFormater(news), lives: liveFormater(lives), videos: videoFormater(videos) }
 }
 

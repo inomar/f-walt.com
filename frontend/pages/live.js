@@ -6,6 +6,7 @@ import UnderLayer from '../components/layout/Underlayer';
 import LiveDetaile from '../components/molecules/LiveDetaile';
 import Pagination from '../components/atoms/Pagination';
 import { liveFormater } from '../lib/Formater';
+import Api from '../lib/api';
 
 const lives = [
   {
@@ -49,9 +50,8 @@ const Live = ({ lives, paging }) => {
 }
 
 Live.getInitialProps = async function() {
-  const wp = new WPAPI({ endpoint: `${process.env.WP_URL}/wp-json` });
-  wp.lives = wp.registerRoute('wp/v2', '/live/(?P<id>[0-9]+)');
-  const lives = await wp.lives().perPage(10).orderby('date').order('desc');
+  const api = new Api();
+  const lives = await api.lives().perPage(10).orderby('date').order('desc');
   return { lives: liveFormater(lives), paging: lives._paging };
 }
 

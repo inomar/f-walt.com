@@ -61,7 +61,7 @@ export default class Head extends Component {
                 Menu.map(menu => {
                   const { href, name } = menu;
                   return (
-                    <NavItem>
+                    <NavItem key={name}>
                       <Link href={href}>{name}</Link>
                     </NavItem>
                   )
@@ -79,7 +79,7 @@ export default class Head extends Component {
             <ModalMenu className="menu">
               <ul className="menu-list">
                 {
-                  Menu.map(menu => <li><Link href={menu.href}>{menu.name}</Link></li>)
+                  Menu.map(menu => <li key={menu.name}><Link href={menu.href}>{menu.name}</Link></li>)
                 }
               </ul>
             </ModalMenu>

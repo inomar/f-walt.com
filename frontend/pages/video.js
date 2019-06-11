@@ -1,10 +1,10 @@
-import WPAPI from 'wpapi';
 import styled from 'styled-components';
 
 import Layout from '../components/layout/Layout';
 import UnderLayer from '../components/layout/Underlayer';
 import { videoFormater } from '../lib/Formater';
 import Movie from '../components/molecules/Movie';
+import Api from '../lib/api';
 
 const Video = ({ videos }) => {
   console.log(videos)
@@ -33,9 +33,8 @@ const Video = ({ videos }) => {
 }
 
 Video.getInitialProps = async function() {
-  const wp = new WPAPI({ endpoint: `${process.env.WP_URL}/wp-json` });
-  wp.videos = wp.registerRoute('wp/v2', '/video/(?P<id>[0-9]+)');
-  const videos = await wp.videos().perPage(10).orderby('date').order('desc');
+  const api = new Api();
+  const videos = await api.videos().perPage(10).orderby('date').order('desc');
   return { videos: videoFormater(videos) };
 }
 
