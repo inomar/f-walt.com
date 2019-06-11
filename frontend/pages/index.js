@@ -7,11 +7,6 @@ import Media from '../components/organisms/Media';
 
 import Api from '../lib/api';
 
-import getConfig from 'next/config'
-
-const { publicRuntimeConfig } = getConfig()
-const { WP_URL } = publicRuntimeConfig
-
 const Index = (props) => {
   const { news, lives, videos } = props;
   return (

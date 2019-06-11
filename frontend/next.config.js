@@ -4,9 +4,6 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = withSass({
-  publicRuntimeConfig: {
-    WP_URL: process.env.WP_URL
-  },
   webpack (config, { buildId, dev, isServer, defaultLoaders, webpack }) {
     config.module.rules.push({
       test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,

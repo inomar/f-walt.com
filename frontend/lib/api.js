@@ -1,10 +1,5 @@
 import WPAPI from 'wpapi';
 
-import getConfig from 'next/config'
-
-const { publicRuntimeConfig } = getConfig()
-const { WP_URL } = publicRuntimeConfig
-
 class Api {
   constructor() {
     this.endpoint = new WPAPI({ endpoint: `http://fwalt.cfbx.jp/wp-json` });
