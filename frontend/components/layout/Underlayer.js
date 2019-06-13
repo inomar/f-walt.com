@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 import { fontFamilyAntiqu } from '../atoms/snippets';
 
@@ -22,6 +23,9 @@ export default Underlayer;
 
 const Section = styled.div`
   padding: 100px 1.5em;
+  ${media.lessThan("medium")`
+    padding: 20px 1.5em;
+  `}
 `;
 
 const Title = styled.h1`

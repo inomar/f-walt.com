@@ -7,7 +7,19 @@ const handle = app.getRequestHandler()
 
 app.prepare()
 .then(() => {
-  const server = express()
+  const server = express();
+
+  server.get('/live?page=:page', (req, res) => {
+    const actualPage = '/live';
+    const queryParams = { page: req.params.page ? req.params.page : 1 };
+    app.render(req, res, actualPage, queryParams);
+  })
+
+  server.get('/live/:id', (req, res) => {
+    const actualPage = '/live';
+    const queryParams = { id: req.params.id }
+    app.render(req, res, actualPage, queryParams);
+  })
 
   server.get('*', (req, res) => {
     return handle(req, res)

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
-
+import media from 'styled-media-query';
+import Link from 'next/link';
 import { FullDate, DefaultDate } from '../atoms/Date';
 
 const LiveDetaile = ({ live }) => {
+  console.log(live)
   const { id, title, date, start, open, club, ticket, ticketType, ticketSource, act, contact, detail } = live;
   return (
     <LiveWrap id={id}>
@@ -32,7 +34,7 @@ const LiveDetaile = ({ live }) => {
       }
       { 
         ticketSource && <Content style="ticketContent" title={'チケット'} body={
-          <div dangerouslySetInnerHTML={{__html : ticketSource}} />
+          <a href={ticketSource} target="_blank" >{ticketSource}</a>
         } />
       }
       { 
@@ -41,6 +43,11 @@ const LiveDetaile = ({ live }) => {
       {
         detail && <div dangerouslySetInnerHTML={{__html : detail}} />
       }
+      <p>
+        <Link href={`/live/${id}`}>
+          <a>more</a>
+        </Link>
+      </p>
       </div>
     </LiveWrap>
   )
@@ -70,6 +77,9 @@ const LiveWrap = styled.section`
 const Title = styled.h2`
   font-size: 36px;
   font-weight: bold;
+  ${media.lessThan('medium')`
+    font-size: 1.8em;
+  `}
 `;
 
 const ContentLine = styled.dl`

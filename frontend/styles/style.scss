@@ -1,10 +1,19 @@
 // We can import bulma into the project using Sass.
+$BLACK: #0a0a0a;
 $radius: 1px;
 $section-padding-medium: 6rem 1.5rem; // 9rem 1.5rem
 $menu-item-color: #FFF;
 $menu-item-radius: 0;
 $menu-item-hover-background-color: rgba(256, 256, 256, 0.8);
 $menu-label-font-size: 1.2em;
+
+$pagination-color: #6e6e6e;
+$pagination-hover-color: #FFF;
+$pagination-border-color: $BLACK;
+$pagination-hover-border-color: $BLACK;
+$pagination-current-background-color: $BLACK;
+$pagination-current-border-color: $BLACK;
+$pagination-focus-border-color:$BLACK;
 
 @import '../node_modules/bulma/bulma';
 @import '../node_modules/@animated-burgers/burger-slip/dist/styles.css';

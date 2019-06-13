@@ -30,7 +30,6 @@ const lives = [
 ];
 
 const Live = ({ lives, paging }) => {
-  const { _paging } = lives;
   const { totalPages } = paging;
   return (
     <Layout>
@@ -40,7 +39,7 @@ const Live = ({ lives, paging }) => {
             lives && lives.map(item => <LiveDetaile live={item} />)
           }
           <Pages>
-            <Pagination totalPage={totalPages} />
+            <Pagination totalPage={totalPages} path="live"/>
           </Pages>
         </div>
       </UnderLayer>
@@ -49,14 +48,15 @@ const Live = ({ lives, paging }) => {
   )
 }
 
-Live.getInitialProps = async function() {
+Live.getInitialProps = async function(context) {
+  const { page } = context.query;
   const api = new Api();
-  const lives = await api.lives().perPage(10).orderby('date').order('desc');
+  const lives = await api.lives().perPage(10).page(page).orderby('date').order('desc');
   return { lives: liveFormater(lives), paging: lives._paging };
 }
 
 export default Live;
 
 const Pages = styled.div`
-  margin: 10px 0 20px;
+  margin: 10px 0 40px;
 `;
