@@ -16,7 +16,7 @@ app.prepare()
   })
 
   server.get('/live/:id', (req, res) => {
-    const actualPage = '/live';
+    const actualPage = '/live/show';
     const queryParams = { id: req.params.id }
     app.render(req, res, actualPage, queryParams);
   })

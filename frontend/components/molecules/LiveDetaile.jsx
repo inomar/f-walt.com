@@ -3,9 +3,8 @@ import media from 'styled-media-query';
 import Link from 'next/link';
 import { FullDate, DefaultDate } from '../atoms/Date';
 
-const LiveDetaile = ({ live }) => {
-  console.log(live)
-  const { id, title, date, start, open, club, ticket, ticketType, ticketSource, act, contact, detail } = live;
+const LiveDetaile = ({ live, isShow }) => {
+  const { id, title, body, date, start, open, club, ticket, ticketType, ticketSource, act, contact, image } = live;
   return (
     <LiveWrap id={id}>
       <div className="liveContent">
@@ -33,21 +32,28 @@ const LiveDetaile = ({ live }) => {
         act && <Content title={'出演者'} body={act} />
       }
       { 
-        ticketSource && <Content style="ticketContent" title={'チケット'} body={
+        isShow && ticketSource && <Content style="ticketContent" title={'チケット'} body={
           <a href={ticketSource} target="_blank" >{ticketSource}</a>
         } />
       }
       { 
-        contact && <Content title={'お問い合わせ'} body={contact} />
+        isShow && contact && <Content title={'お問い合わせ'} body={contact} />
       }
       {
-        detail && <div dangerouslySetInnerHTML={{__html : detail}} />
+        isShow && body && <div dangerouslySetInnerHTML={{__html : body}} />
       }
-      <p>
-        <Link href={`/live/${id}`}>
-          <a>more</a>
-        </Link>
-      </p>
+      {
+        isShow && image && <img src={image.url} />
+      }
+      {
+        !isShow && (
+          <p>
+            <Link href={`/live/${id}`}>
+              <a>more</a>
+            </Link>
+          </p>
+        )
+      }
       </div>
     </LiveWrap>
   )

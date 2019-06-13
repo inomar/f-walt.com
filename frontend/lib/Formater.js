@@ -12,26 +12,25 @@ export const newsFormater = (data) => {
 };
 
 export const liveFormater = (data) => {
-  if (!data) return [];
-  return data.map(item => {
-    const { id, title, content, acf, date } = item;
-    const { act, club, ticket, start, open, tickettype, ticketsource, contact, detail } = acf;
-    return {
-      id,
-      title: title.rendered,
-      body: content.rendered,
-      club,
-      act,
-      ticket,
-      start,
-      open,
-      date,
-      ticketType: tickettype,
-      ticketSource: ticketsource,
-      contact,
-      detail,
-    }
-  })
+  console.log(data)
+  const { id, title, content, acf, date } = data;
+  const { act, club, ticket, start, open, tickettype, ticketsource, contact, detail, image } = acf;
+  return {
+    id,
+    title: title.rendered,
+    body: content.rendered,
+    club,
+    act,
+    ticket,
+    start,
+    open,
+    date,
+    ticketType: tickettype,
+    ticketSource: ticketsource,
+    contact,
+    detail,
+    image,
+  }
 };
 
 export const videoFormater = (data) => {

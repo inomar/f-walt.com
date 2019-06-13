@@ -52,7 +52,7 @@ Live.getInitialProps = async function(context) {
   const { page } = context.query;
   const api = new Api();
   const lives = await api.lives().perPage(10).page(page).orderby('date').order('desc');
-  return { lives: liveFormater(lives), paging: lives._paging };
+  return { lives: lives.map(live => liveFormater(live)), paging: lives._paging };
 }
 
 export default Live;
