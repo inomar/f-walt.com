@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { FullDate, DefaultDate } from '../atoms/Date';
 import ImageLightBox from '../atoms/ImageLightBox';
+import MoreBtn from '../atoms/MoreBtn';
 
 class LiveDetaile extends Component {
   constructor(props) {
@@ -65,11 +66,9 @@ class LiveDetaile extends Component {
         }
         {
           !isShow && (
-            <p>
-              <Link href={`/live/${id}`}>
-                <a>more</a>
-              </Link>
-            </p>
+            <MoreWrap>
+              <MoreBtn path={`/live/${id}`} />
+            </MoreWrap>
           )
         }
         </div>
@@ -124,4 +123,8 @@ const Image = styled.img`
   width: 100px;
   height: auto;
   cursor: pointer;
+`;
+
+const MoreWrap = styled.p`
+  padding: 20px 0 0;
 `;

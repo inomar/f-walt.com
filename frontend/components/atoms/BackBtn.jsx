@@ -5,7 +5,7 @@ const BackBtn = ({ path }) => (
   <Link href={path}>
     <a>
       <BackIcon className="fas fa-chevron-left" />
-      Back
+      back
     </a>
   </Link>
 );
