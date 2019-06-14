@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { TwitterIcon, InstagramIcon } from '../atoms/Icon';
 import CopyRight from '../atoms/CopyRight';
 
-import { twitterUrl, instagramUrl} from '../../static/test';
+import { TwitterUrl, InstagramUrl} from '../../config/constantes';
 
 const Section = styled.section`
   border-top: 1px solid #FFF;
@@ -22,8 +22,8 @@ const Footer = () => {
       <div className="container">
         <footer>
           <Menu>
-            <TwitterIcon url={twitterUrl} />
-            <InstagramIcon url={instagramUrl} />
+            <TwitterIcon url={TwitterUrl} />
+            <InstagramIcon url={InstagramUrl} />
           </Menu>
           <CopyRight />
         </footer>

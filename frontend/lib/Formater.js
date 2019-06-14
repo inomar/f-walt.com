@@ -12,13 +12,13 @@ export const newsFormater = (data) => {
 };
 
 export const liveFormater = (data) => {
-  console.log(data)
   const { id, title, content, acf, date } = data;
-  const { act, club, ticket, start, open, tickettype, ticketsource, contact, detail, image } = acf;
+  const { description, act, club, ticket, start, open, tickettype, ticketsource, contact, detail, image } = acf;
   return {
     id,
     title: title.rendered,
     body: content.rendered,
+    description,
     club,
     act,
     ticket,

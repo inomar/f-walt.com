@@ -1,62 +1,84 @@
+import React, { createRef, Component } from 'react';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import Link from 'next/link';
-import { FullDate, DefaultDate } from '../atoms/Date';
 
-const LiveDetaile = ({ live, isShow }) => {
-  const { id, title, body, date, start, open, club, ticket, ticketType, ticketSource, act, contact, image } = live;
-  return (
-    <LiveWrap id={id}>
-      <div className="liveContent">
-      <FullDate date={date} />
-      <Title>{title}</Title>
-      { 
-        club && <Content title={'場所'} body={club} />
-      }
-      {
-        date && <Content title={'日時'} body={
-        <div>
-          <DefaultDate date={date} />
-          <p>open: {open ? open : '-' }&nbsp; start: {start ? start : '-' }</p>
-        </div>
-      } />
-      }
-      {
-        ticket && <Content title={'料金'} body={
+import { FullDate, DefaultDate } from '../atoms/Date';
+import ImageLightBox from '../atoms/ImageLightBox';
+
+class LiveDetaile extends Component {
+  constructor(props) {
+    super(props);
+    this.child = React.createRef();
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.child.current.onOpen();
+  };
+
+  render() {
+    const { live, isShow } = this.props;
+    const { id, title, body, date, start, open, club, ticket, ticketType, ticketSource, act, contact, image } = live;
+    console.log(image)
+    return (
+      <LiveWrap id={id}>
+        <div className="liveContent">
+        <FullDate date={date} />
+        <Title>{title}</Title>
+        { 
+          club && <Content title={'場所'} body={club} />
+        }
+        {
+          date && <Content title={'日時'} body={
           <div>
-            {ticketType ? `${ticketType}` : '' } &yen;{ticket}（税込み）
+            <DefaultDate date={date} />
+            <p>open: {open ? open : '-' }&nbsp; start: {start ? start : '-' }</p>
           </div>
         } />
-      }
+        }
+        {
+          ticket && <Content title={'料金'} body={
+            <div>
+              {ticketType ? `${ticketType}` : '' } &yen;{ticket}（税込み）
+            </div>
+          } />
+        }
+        {
+          act && <Content title={'出演者'} body={act} />
+        }
+        { 
+          isShow && ticketSource && <Content style="ticketContent" title={'チケット'} body={
+            <a href={ticketSource} target="_blank" >{ticketSource}</a>
+          } />
+        }
+        { 
+          isShow && contact && <Content title={'お問い合わせ'} body={contact} />
+        }
+        {
+          isShow && body && <Content title={'内容'} body={
+            <div dangerouslySetInnerHTML={{__html : body}} />
+          } />
+        }
+        {
+          isShow && image && <Image src={image} onClick={this.onClick} />
+        }
+        {
+          !isShow && (
+            <p>
+              <Link href={`/live/${id}`}>
+                <a>more</a>
+              </Link>
+            </p>
+          )
+        }
+        </div>
       {
-        act && <Content title={'出演者'} body={act} />
+        isShow && image && <ImageLightBox image={image.url} ref={this.child} />
       }
-      { 
-        isShow && ticketSource && <Content style="ticketContent" title={'チケット'} body={
-          <a href={ticketSource} target="_blank" >{ticketSource}</a>
-        } />
-      }
-      { 
-        isShow && contact && <Content title={'お問い合わせ'} body={contact} />
-      }
-      {
-        isShow && body && <div dangerouslySetInnerHTML={{__html : body}} />
-      }
-      {
-        isShow && image && <img src={image.url} />
-      }
-      {
-        !isShow && (
-          <p>
-            <Link href={`/live/${id}`}>
-              <a>more</a>
-            </Link>
-          </p>
-        )
-      }
-      </div>
-    </LiveWrap>
-  )
+      </LiveWrap>
+    );
+  }
 }
 
 const Content = ({ title, body, style }) => {
@@ -93,4 +115,13 @@ const ContentLine = styled.dl`
   &.ticketContent {
     margin: 35px 0;
   }
-`
+`;
+
+const Image = styled.img`
+  margin-top: 20px;
+  border: 1px solid #FFF;
+  padding: 2px;
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+`;

@@ -6,25 +6,32 @@ import { liveFormater } from '../../lib/Formater';
 import Layout from '../../components/layout/Layout';
 import UnderLayer from '../../components/layout/Underlayer';
 import LiveDetaile from '../../components/molecules/LiveDetaile';
+import Ogp from '../../components/molecules/Ogp';
+import ShareButtons from '../../components/molecules/ShareButtons';
+import { Url } from '../../config/constantes';
+import BackBtn from '../../components/atoms/BackBtn';
 
-const Show = ({ live }) => (
+const Show = ({ live, path }) => (
   <Layout>
+    <Ogp title={live.title} description={live.description} image={live.image ? live.image.url : null} />
     <UnderLayer title="LIVE">
       <Container className="container">
         <LiveDetaile live={live} isShow={true} />
-        <Link href="/live">
-          <a>Back</a>
-        </Link>
+        <ShareButtons title={live.title} url={`${Url}${path}`} />
       </Container>
+      <Center>
+        <BackBtn path="/live" />
+      </Center>
     </UnderLayer>
   </Layout>
 );
 
-Show.getInitialProps = async function(context) {
+Show.getInitialProps = async function(context, req) {
   const { id } = context.query;
+  const { asPath } = context;
   const api = new Api();
   const live = await api.lives().id(id);
-  return { live: liveFormater(live) };
+  return { live: liveFormater(live), path: asPath};
 }
 
 
@@ -32,4 +39,9 @@ export default Show;
 
 const Container = styled.div`
   margin-bottom: 50px;
+`;
+
+const Center = styled.div`
+  text-align: center;
+  margin: 0 0 20px;
 `;
