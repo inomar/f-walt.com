@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const BackBtn = ({ path }) => (
   <Link href={path}>
     <a>
-      <BackIcon className="fas fa-chevron-left" />
+      <Back className="icon">
+        <i className="fas fa-chevron-left" />
+      </Back>
       back
     </a>
   </Link>
@@ -12,6 +14,7 @@ const BackBtn = ({ path }) => (
 
 export default BackBtn;
 
-const BackIcon = styled.i`
-  margin-right: 5px;
+const Back = styled.span`
+  vertical-align: middle;
+  font-size: .8rem;
 `;

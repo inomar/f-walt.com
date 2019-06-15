@@ -32,12 +32,12 @@ $pagination-focus-border-color:$BLACK;
 }
 .page-transition-enter-active {
   opacity: 1;
-  transition: opacity 100ms;
+  transition: opacity 200ms;
 }
 .page-transition-exit {
   opacity: 1;
 }
 .page-transition-exit-active {
   opacity: 0;
-  transition: opacity 100ms;
+  transition: opacity 200ms;
 }

@@ -5,13 +5,16 @@ const MoreBtn = ({ path }) => (
   <Link href={path}>
     <a>
       more
-      <MoreIcon className="fas fa-chevron-right" />
+      <More className="icon">
+        <i className="fas fa-chevron-right" />
+      </More>
     </a>
   </Link>
 );
 
 export default MoreBtn;
 
-const MoreIcon = styled.i`
-  margin-left: 5px;
+const More = styled.span`
+  vertical-align: middle;
+  font-size: .8rem;
 `;

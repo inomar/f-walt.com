@@ -1,7 +1,9 @@
 import moment from 'moment';
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import Link from 'next/link';
 
+import MoreBtn from '../atoms/MoreBtn';
 import { FullDate } from '../atoms/Date';
 
 const LiveWrap = styled.div`
@@ -44,7 +46,7 @@ const ArrowIcon = styled.span`
 `;
 
 const Live = (props) => {
-  const { date, club, title, ticket, act, open, start } = props.live;
+  const { id, date, club, title, ticket, act, open, start } = props.live;
   const year = `${moment(date).format('YYYY')}`;
   const month_date = `${moment(date).format('MM/DD')}`;
   return (
@@ -63,7 +65,7 @@ const Live = (props) => {
         <p>open: {open} &nbsp; start: {start}</p>
       </div>
       <MoreWrap>
-        <a href="#">more <ArrowIcon className="icon"><i class="fas fa-chevron-right"></i></ArrowIcon></a>
+        <MoreBtn path={`/live/${id}`} />
       </MoreWrap>
     </LiveWrap>
   )
