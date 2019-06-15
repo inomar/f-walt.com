@@ -11,6 +11,14 @@ const Button = ({title, href, as = null}) => {
   )
 }
 
+export const ButtonClick = ({ title, func }) => {
+  return (
+    <Btn className="button" onClick={func}>
+      {title}
+    </Btn>
+  );
+};
+
 export default Button;
 
 const Btn = styled.a`
