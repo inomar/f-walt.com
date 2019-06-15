@@ -13,22 +13,32 @@ const Menu = [
   {
     name: 'NEWS',
     href: '/news',
+    isMobile: false,
   }, {
     name: 'LIVE',
     href: '/live',
+    isMobile: false,
   }, {
     name: 'VIDEO',
     href: '/video',
+    isMobile: false,
   }, {
     name: 'MARCH',
     href: '/march',
+    isMobile: false,
   }, {
     name: 'BIOGRAPHY',
     href: '/biography',
+    isMobile: false,
   }, {
     name: 'CONTACT',
     href: '/contact',
-  },
+    isMobile: false,
+  }, {
+    name: 'TOP',
+    href: '/',
+    isMobile: true
+  }
 ];
 
 export default class Head extends Component {
@@ -59,7 +69,8 @@ export default class Head extends Component {
             <NavItems>
               {
                 Menu.map(menu => {
-                  const { href, name } = menu;
+                  const { href, name, isMobile } = menu;
+                  if (isMobile) return;
                   return (
                     <NavItem key={name}>
                       <Link href={href}>{name}</Link>
@@ -79,7 +90,13 @@ export default class Head extends Component {
             <ModalMenu className="menu">
               <ul className="menu-list">
                 {
-                  Menu.map(menu => <li key={menu.name}><Link href={menu.href}>{menu.name}</Link></li>)
+                  Menu.map(menu => {
+                    const { href, name } = menu;
+                    return (
+                      <li key={name}>
+                        <Link href={href}>{name}</Link>
+                      </li>)
+                  })
                 }
               </ul>
             </ModalMenu>

@@ -1,14 +1,11 @@
 export const newsFormater = (data) => {
-  if (!data) return [];
-  return data.map(item => {
-    const { id, title, content, date } = item;
-    return {
-      id,
-      title: title.rendered,
-      body: content.rendered,
-      date: date,
-    }
-  })
+  const { id, title, content, date } = data;
+  return {
+    id,
+    title: title.rendered,
+    body: content.rendered,
+    date: date,
+  };
 };
 
 export const liveFormater = (data) => {
@@ -30,7 +27,7 @@ export const liveFormater = (data) => {
     contact,
     detail,
     image,
-  }
+  };
 };
 
 export const videoFormater = (data) => {
