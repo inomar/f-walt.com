@@ -9,11 +9,11 @@ app.prepare()
 .then(() => {
   const server = express();
 
-  server.get('/live?page=:page', (req, res) => {
-    const actualPage = '/live';
-    const queryParams = { page: req.params.page ? req.params.page : 1 };
-    app.render(req, res, actualPage, queryParams);
-  })
+  // server.get('/live?page=:page', (req, res) => {
+  //   const actualPage = '/live';
+  //   const queryParams = { page: req.params.page ? req.params.page : 1 };
+  //   app.render(req, res, actualPage, queryParams);
+  // })
 
   server.get('/live/:id', (req, res) => {
     const actualPage = '/live/show';
