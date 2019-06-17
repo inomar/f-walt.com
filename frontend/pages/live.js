@@ -4,43 +4,25 @@ import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import UnderLayer from '../components/layout/Underlayer';
 import LiveDetaile from '../components/molecules/LiveDetaile';
-import Pagination from '../components/atoms/Pagination';
+import Pages from '../components/molecules/Pages';
 import { liveFormater } from '../lib/Formater';
 import Api from '../lib/api';
-
-const lives = [
-  {
-    id: 1,
-    title: 'ライブタイトル',
-    date: '2019-06-08 00:00:00',
-  },{
-    id: 2,
-    title: 'ライブタイトル2',
-    date: '2019-06-08 00:12:00',
-    open: '12:00',
-    start: '13:00',
-    club: '新宿アンチノック',
-    ticket: 2000,
-    ticketType: 'スタンディング', 
-    ticketSource: 'https://t.pia.jp/', 
-    act: 'メタリカ/スラッsy', 
-    contact: 'こちらまで',
-    detail: '<a href="https://futurewoods.co.jp">こちら</a>'
-  },
-];
+import { liveDescription } from '../config/constantes';
+import Headers from '../components/layout/Headers';
+import Ogp from '../components/molecules/Ogp';
 
 const Live = ({ lives, paging }) => {
   const { totalPages } = paging;
   return (
     <Layout>
+      <Headers pageTitle={'LIVE'} pageDescription={liveDescription} />
+      <Ogp title={'LIVE'} description={liveDescription} />
       <UnderLayer title="LIVE">
         <div className="container">
           {
             lives && lives.map(item => <LiveDetaile live={item} />)
           }
-          <Pages>
-            <Pagination totalPage={totalPages} path="live"/>
-          </Pages>
+          <Pages totalPages={totalPages} path={'live'} />
         </div>
       </UnderLayer>
     </Layout>
@@ -56,7 +38,3 @@ Live.getInitialProps = async function(context) {
 }
 
 export default Live;
-
-const Pages = styled.div`
-  margin: 10px 0 40px;
-`;

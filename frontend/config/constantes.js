@@ -11,3 +11,9 @@ export const InstagramUrl = 'https://www.instagram.com/f_walt_jp/';
 export const Logo_white = '/static/logo_black.jpb';
 export const Logo_black = '/static/logo_white.jpg';
 
+export const newsDescription = 'F.WALTのNEWS一覧です。';
+export const liveDescription = 'F.WALTのLIVE一覧です。';
+export const videoDescription = 'F.WALTのVIDEO一覧です。';
+export const marchDescription = 'F.WALTのMARCH一覧です。';
+export const biographyDescription = 'F.WALTのBIOGRAPHYです。';
+export const contactDescription = 'F.WALTのCONTACTです。';

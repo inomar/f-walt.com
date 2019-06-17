@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import UnderLayer from '../components/layout/Underlayer';
 import { ButtonClick } from '../components/atoms/Button';
+import {contactDescription } from '../config/constantes';
+import Headers from '../components/layout/Headers';
+import Ogp from '../components/molecules/Ogp';
 
 class Contact extends Component {
   constructor(props) {
@@ -34,6 +37,8 @@ class Contact extends Component {
   render() {
     return (
       <Layout>
+        <Headers pageTitle={'CONTACT'} pageDescription={contactDescription} />
+        <Ogp title={'CONTACT'} description={contactDescription} />
         <UnderLayer title="CONTACT">
           <div className="container">
             <section className="section">

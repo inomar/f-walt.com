@@ -7,7 +7,7 @@ const CopyRightStyle = styled.p`
 `;
 
 const CopyRight = () => (
-  <CopyRightStyle>Copyright ©️ F.Walt. All Rights Reserved.</CopyRightStyle>
+  <CopyRightStyle>Copyright &copy; F.WALT. All Rights Reserved.</CopyRightStyle>
 );
 
 export default CopyRight;

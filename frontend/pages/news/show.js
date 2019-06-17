@@ -5,6 +5,7 @@ import { newsFormater } from '../../lib/Formater';
 import Layout from '../../components/layout/Layout';
 import UnderLayer from '../../components/layout/Underlayer';
 import Ogp from '../../components/molecules/Ogp';
+import Headers from '../components/layout/Headers';
 import ShareButtons from '../../components/molecules/ShareButtons';
 import { Url } from '../../config/constantes';
 import BackBtn from '../../components/atoms/BackBtn';
@@ -12,7 +13,8 @@ import { FullDate } from '../../components/atoms/Date';
 
 const Show = ({ news, path }) => (
   <Layout>
-    <Ogp title={news.title} description={news.body} image={''} />
+    <Headers pageTitle={news.title} pageDescription={news.body} />
+    <Ogp title={news.title} description={news.body} />
     <UnderLayer title="NEWS">
       <Container className="container">
         <Section className="section">

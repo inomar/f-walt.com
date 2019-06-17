@@ -6,13 +6,15 @@ import { liveFormater } from '../../lib/Formater';
 import Layout from '../../components/layout/Layout';
 import UnderLayer from '../../components/layout/Underlayer';
 import LiveDetaile from '../../components/molecules/LiveDetaile';
-import Ogp from '../../components/molecules/Ogp';
 import ShareButtons from '../../components/molecules/ShareButtons';
 import { Url } from '../../config/constantes';
 import BackBtn from '../../components/atoms/BackBtn';
+import Headers from '../components/layout/Headers';
+import Ogp from '../components/molecules/Ogp';
 
 const Show = ({ live, path }) => (
   <Layout>
+    <Headers pageTitle={live.title} pageDescription={live.description} />
     <Ogp title={live.title} description={live.description} image={live.image ? live.image.url : null} />
     <UnderLayer title="LIVE">
       <Container className="container">

@@ -5,11 +5,15 @@ import UnderLayer from '../components/layout/Underlayer';
 import { videoFormater } from '../lib/Formater';
 import Movie from '../components/molecules/Movie';
 import Api from '../lib/api';
+import Headers from '../components/layout/Headers';
+import Ogp from '../components/molecules/Ogp';
+import { videoDescription } from '../config/constantes';
 
 const Video = ({ videos }) => {
-  console.log(videos)
   return (
     <Layout>
+      <Headers pageTitle={'VIDEO'} pageDescription={videoDescription} />
+      <Ogp title={'VIDEO'} description={videoDescription} />
       <UnderLayer title="VIDEO">
         <div className="container">
           <section className="section is-medium">
@@ -29,8 +33,7 @@ const Video = ({ videos }) => {
       </UnderLayer>
     </Layout>
   )
-
-}
+};
 
 Video.getInitialProps = async function() {
   const api = new Api();
