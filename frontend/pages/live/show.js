@@ -9,8 +9,8 @@ import LiveDetaile from '../../components/molecules/LiveDetaile';
 import ShareButtons from '../../components/molecules/ShareButtons';
 import { Url } from '../../config/constantes';
 import BackBtn from '../../components/atoms/BackBtn';
-import Headers from '../components/layout/Headers';
-import Ogp from '../components/molecules/Ogp';
+import Headers from '../../components/layout/Headers';
+import Ogp from '../../components/molecules/Ogp';
 
 const Show = ({ live, path }) => (
   <Layout>
