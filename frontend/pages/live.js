@@ -20,7 +20,7 @@ const Live = ({ lives, paging }) => {
       <UnderLayer title="LIVE">
         <div className="container">
           {
-            lives && lives.map(item => <LiveDetaile live={item} />)
+            lives && lives.map(item => <LiveDetaile key={item.id} live={item} />)
           }
           <Pages totalPages={totalPages} path={'live'} />
         </div>

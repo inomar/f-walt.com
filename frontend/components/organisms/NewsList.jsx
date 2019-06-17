@@ -9,7 +9,7 @@ const NewsList = ({ news }) => {
     <React.Fragment>
       {
         news && news.map(item => (
-          <NewsWrap>
+          <NewsWrap key={item.id}>
             <Topic topic={item} isShow={true} />
           </NewsWrap>
         ))

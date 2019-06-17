@@ -73,7 +73,7 @@ export default class Head extends Component {
                   if (isMobile) return;
                   return (
                     <NavItem key={name}>
-                      <Link href={href}>{name}</Link>
+                      <Link href={href}><a>{name}</a></Link>
                     </NavItem>
                   )
                 })
@@ -94,7 +94,7 @@ export default class Head extends Component {
                     const { href, name } = menu;
                     return (
                       <li key={name}>
-                        <Link href={href}>{name}</Link>
+                        <Link href={href}><a>{name}</a></Link>
                       </li>)
                   })
                 }

@@ -13,7 +13,7 @@ const Videos = ({ videos }) => {
         <div className="columns">
           {
             videos && videos.map(video => (
-              <div className="column" >
+              <div key={video.videoId} className="column" >
                 <Movie videoId={video.videoId} />
               </div>
             ))

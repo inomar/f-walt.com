@@ -24,7 +24,7 @@ const Instagram = styled(Icon)`
 
 export const TwitterIcon = ({ url }) => (
   <Twitter className="icon has-text-info" href={url} target="_blank" >
-    <i class="fab fa-twitter"></i>
+    <i className="fab fa-twitter"></i>
   </Twitter>
 );
 
@@ -39,6 +39,6 @@ export const InstagramIcon = ({ url }) => (
         <stop stopColor="#285AEB" offset="0.9" />
       </radialGradient>
     </svg>
-    <i class="fab fa-instagram" ariaHidden="true"></i>
+    <i className="fab fa-instagram"></i>
   </Instagram>
 );

@@ -39,8 +39,8 @@ const Lives = ({ lives }) => {
           <LiveWrap className="columns">
             {
               lives && lives.map(live => (
-                <div className="column Live">
-                  <Live key={live.id} live={live} />
+                <div key={live.id} className="column Live">
+                  <Live live={live} />
                 </div>
               ))
             }

@@ -21,7 +21,6 @@ class LiveDetaile extends Component {
   render() {
     const { live, isShow } = this.props;
     const { id, title, body, date, start, open, club, ticket, ticketType, ticketSource, act, contact, image } = live;
-    console.log(image)
     return (
       <LiveWrap id={id}>
         <div className="liveContent">
