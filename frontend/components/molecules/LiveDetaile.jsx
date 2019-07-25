@@ -25,7 +25,7 @@ class LiveDetaile extends Component {
       <LiveWrap id={id}>
         <div className="liveContent">
         <FullDate date={date} />
-        <Title>{title}</Title>
+        <Title dangerouslySetInnerHTML={{ __html: title }} />
         { 
           club && <Content title={'場所'} body={club} />
         }

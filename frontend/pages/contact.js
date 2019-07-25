@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 import Layout from '../components/layout/Layout';
 import UnderLayer from '../components/layout/Underlayer';
@@ -19,6 +20,8 @@ class Contact extends Component {
     }
     this.sendHandle = this.sendHandle.bind(this);
     this.inputHandle = this.inputHandle.bind(this);
+    this.convertJsontoUrlencoded = this.convertJsontoUrlencoded.bind(this);
+    
   }
 
 
@@ -28,10 +31,50 @@ class Contact extends Component {
     this.setState({...this.state});
   }
 
+  convertJsontoUrlencoded(obj) {
+    let str = [];
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        str.push(encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]))
+      }
+    }
+    return str.join("&");
+  }
+
 
   sendHandle(e) {
     e.preventDefault();
-    console.log(this.state)
+    const { name, email, message } = this.state;
+    const data = {
+      fname: name,
+      femail: email,
+      fmessage: message,
+      _wpcf7_nonce: 'aaa',
+      _wpcf7: 36,
+      _wpcf7_version: '5.1.3',
+      _wpcf7_locale: 'ja',
+      _wpcf7_unit_tag: 'wpcf7-f36-p1-o1',
+      _wpcf7_container_post: 1,
+    };
+    const options = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      }
+    }
+    console.log(data)
+    axios({
+      method: 'POST',
+      url: 'https://fwalt.cfbx.jp/wp-json/contact-form-7/v1/contact-forms/36/feedback',
+      data: this.convertJsontoUrlencoded(data),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'}
+    }).then((res) => {
+      const { status, message } = res.data;
+      console.log(res)
+      if (status === 'validation_failed') this.setState({ error: true, errorMessage: message})
+  })
+  .catch(error => {
+      console.log(error);
+  });
   }
 
   render() {
@@ -42,7 +85,9 @@ class Contact extends Component {
         <UnderLayer title="CONTACT">
           <div className="container">
             <section className="section">
-
+              {
+                this.state.error && <p>{this.state.errorMessage}</p>
+              }
             <div className="field">
               <label className="label">Name</label>
               <div className="control">

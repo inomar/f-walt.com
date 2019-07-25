@@ -57,7 +57,7 @@ const Live = (props) => {
           <i className="fas fa-cube"></i>&nbsp;
           {club}
         </p>
-        <Title>{title}</Title>
+        <Title dangerouslySetInnerHTML={ {__html:title}} />
         <p>
           act: { act }
         </p>
