@@ -40,7 +40,7 @@ class LiveDetaile extends Component {
         {
           ticket && <Content title={'料金'} body={
             <div>
-              {ticketType ? `${ticketType}` : '' } &yen;{ticket}（税込み）
+              {ticketType ? `${ticketType}` : '' } {ticket}
             </div>
           } />
         }
