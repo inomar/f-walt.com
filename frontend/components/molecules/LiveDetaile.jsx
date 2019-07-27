@@ -61,7 +61,7 @@ class LiveDetaile extends Component {
           } />
         }
         {
-          isShow && image && <Image src={image} onClick={this.onClick} />
+          isShow && image && <Image src={image.url} onClick={this.onClick} />
         }
         {
           !isShow && (

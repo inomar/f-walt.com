@@ -83,59 +83,11 @@ class Contact extends Component {
         <Headers pageTitle={'CONTACT'} pageDescription={contactDescription} />
         <Ogp title={'CONTACT'} description={contactDescription} />
         <UnderLayer title="CONTACT">
-          <div className="container">
-            <section className="section">
-              {
-                this.state.error && <p>{this.state.errorMessage}</p>
-              }
-            <div className="field">
-              <label className="label">Name</label>
-              <div className="control">
-                <input name="name" className="input" type="text" placeholder="お名前やニックネーム" required="true" onChange={this.inputHandle} />
-              </div>
+          <section className="section">
+            <div className="container">
+              <Paragraph>coming soon...</Paragraph>
             </div>
-
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input name="email" className="input" type="email" placeholder="メールアドレス" required="true" onChange={this.inputHandle} />
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Ticket</label>
-              <div class="control">
-                <div class="select">
-                  <select name="ticket" onChange={this.inputHandle}>
-                    <option>Select</option>
-                    <option>With options</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div className="field">
-              <label className="label">Message</label>
-              <div className="control">
-                <textarea name="message" className="textarea" placeholder="メッセージなど" required="true" onChange={this.inputHandle}></textarea>
-              </div>
-            </div>
-
-            <div className="field">
-              <div className="control">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                    I agree to the <a href="#">terms and conditions</a>
-                </label>
-              </div>
-            </div>
-
-
-            <SendWrap>
-              <ButtonClick title={'Send'} func={this.sendHandle} />
-            </SendWrap>
-            </section>
-          </div>
+          </section>
         </UnderLayer>
       </Layout>
     )
@@ -147,5 +99,9 @@ export default Contact;
 
 
 const SendWrap = styled.div`
+  text-align: center;
+`;
+
+const Paragraph = styled.p`
   text-align: center;
 `;

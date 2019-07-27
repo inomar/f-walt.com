@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import Layout from '../components/layout/Layout';
 import UnderLayer from '../components/layout/Underlayer';
 
@@ -12,11 +14,18 @@ const March = () => {
       <Headers pageTitle={'MARCH'} pageDescription={marchDescription} />
       <Ogp title={'MARCH'} description={marchDescription} />
       <UnderLayer title="MARCH">
-        <div className="container">
-        </div>
+        <section class="section">
+          <div className="container">
+            <Paragraph>coming soon...</Paragraph>
+          </div>
+        </section>
       </UnderLayer>
     </Layout>
   )
 }
 
 export default March;
+
+const Paragraph = styled.p`
+  text-align: center;
+`;

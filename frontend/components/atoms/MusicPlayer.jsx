@@ -21,7 +21,7 @@ export const SpotifyMusicPlayer = ({ uri }) => {
     <SpotifyPlayer
       uri={uri}
       size={size}
-      view="list"
+      view="coverart"
       theme="black"
     />
   )

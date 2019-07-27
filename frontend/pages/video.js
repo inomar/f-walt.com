@@ -17,9 +17,12 @@ const Video = ({ videos }) => {
       <UnderLayer title="VIDEO">
         <div className="container">
           <section className="section is-medium">
+            {
+              videos.length === 0 && <Paragraph>coming soon...</Paragraph>
+            }
             <div className="columns is-multiline is-desktop">
               {
-                videos && videos.map(video => {
+                videos.length > 0 && videos.map(video => {
                   return (
                     <div className="column is-one-third">
                       <Movie videoId={video.videoId} />
@@ -42,3 +45,7 @@ Video.getInitialProps = async function() {
 }
 
 export default Video;
+
+const Paragraph = styled.p`
+  text-align: center;
+`;

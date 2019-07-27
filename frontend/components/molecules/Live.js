@@ -61,7 +61,7 @@ const Live = (props) => {
         <p>
           act: { act }
         </p>
-        <p>ticket: ¥{ticket}</p>
+        <p>ticket: {ticket}</p>
         <p>open: {open} &nbsp; start: {start}</p>
       </div>
       <MoreWrap>

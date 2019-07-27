@@ -1,8 +1,10 @@
 import App, { Container } from 'next/app';
 import React from 'react';
 import { PageTransition } from 'next-page-transitions';
+import Router from "next/router";
+import withGA from "next-ga";
 
-export default class MyApp extends App {
+class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {}
 
@@ -24,3 +26,5 @@ export default class MyApp extends App {
     )
   }
 }
+
+export default withGA("UA-93818826-7", Router)(MyApp);

@@ -9,8 +9,8 @@ export const newsFormater = (data) => {
 };
 
 export const liveFormater = (data) => {
-  const { id, title, content, acf, date } = data;
-  const { description, act, club, ticket, start, open, tickettype, ticketsource, contact, detail, image } = acf;
+  const { id, title, content, acf } = data;
+  const { description, act, club, ticket, start, open, tickettype, ticketsource, contact, detail, image, date } = acf;
   return {
     id,
     title: title.rendered,
