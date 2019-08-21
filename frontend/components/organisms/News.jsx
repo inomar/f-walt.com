@@ -21,7 +21,7 @@ const News = ({ news }) => {
             </div>
           </div>
           <div className="u-text-align">
-            <Button title="Show All" />
+            <Button title="Show All" href="/news" />
           </div>
         </Container>
       </section>
