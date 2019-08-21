@@ -1,36 +1,43 @@
 // We can import bulma into the project using Sass.
+$BLACK: #0a0a0a;
 $radius: 1px;
+$section-padding-medium: 6rem 1.5rem; // 9rem 1.5rem
+$menu-item-color: #FFF;
+$menu-item-radius: 0;
+$menu-item-hover-background-color: rgba(256, 256, 256, 0.8);
+$menu-label-font-size: 1.2em;
+
+$pagination-color: #6e6e6e;
+$pagination-hover-color: #FFF;
+$pagination-border-color: $BLACK;
+$pagination-hover-border-color: $BLACK;
+$pagination-current-background-color: $BLACK;
+$pagination-current-border-color: $BLACK;
+$pagination-focus-border-color:$BLACK;
 
 @import '../node_modules/bulma/bulma';
+@import '../node_modules/@animated-burgers/burger-slip/dist/styles.css';
+@import '../node_modules/react-image-lightbox/style.css';
 
-html,body {
-  color: #FFF;
-  background-color: $black;
-}
-
-
-.l-layout {
-  &Header {
-    background-color: $black !important;
-    &__nav {
-      margin: 0 auto;
-    }
-  }
-}
-
-.p-header {
-  &Logo {
-    text-align: center;
-  }
-}
-
-.p-live {
-  background-image: url(/static/top.jpg);
-  &Wrap {
-    background-color: rgba(256,256,256,.2);
-  }
+.u-bg__filter {
+  background-color: rgba(0,0,0, .4);
 }
 
 .u-text-align {
   text-align: center
+}
+
+.page-transition-enter {
+  opacity: 0;
+}
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.page-transition-exit {
+  opacity: 1;
+}
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }

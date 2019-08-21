@@ -1,0 +1,7 @@
+setup:
+  addons:
+    - plan: jawsdb
+      as: DATABASE
+build:
+  docker:
+    web: wordpress/Dockerfile
