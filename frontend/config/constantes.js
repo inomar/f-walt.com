@@ -7,6 +7,7 @@ export const SpotifyUri = 'spotify:album:4INtUvPabb6IPrfqOHeW9u';
 export const TwitterScreenName = 'f_walt_jp';
 export const TwitterUrl = 'https://twitter.com/f_walt_jp';
 export const InstagramUrl = 'https://www.instagram.com/f_walt_jp/';
+export const ShopUrl = 'https://fwaltstyle.shopselect.net/';
 
 export const Logo_white = '/static/logo_black.jpb';
 export const Logo_black = '/static/logo_white.jpg';
