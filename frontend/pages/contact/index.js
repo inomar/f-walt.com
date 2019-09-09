@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import Layout from '../components/layout/Layout';
-import UnderLayer from '../components/layout/Underlayer';
-import { ButtonClick } from '../components/atoms/Button';
-import {contactDescription } from '../config/constantes';
-import Headers from '../components/layout/Headers';
-import Ogp from '../components/molecules/Ogp';
+import Layout from '../../components/layout/Layout';
+import UnderLayer from '../../components/layout/Underlayer';
+import { ButtonClick } from '../../components/atoms/Button';
+import {contactDescription } from '../../config/constantes';
+import Headers from '../../components/layout/Headers';
+import Ogp from '../../components/molecules/Ogp';
+import ContactForm from '../../components/organisms/ContactForm';
 
 class Contact extends Component {
   constructor(props) {
@@ -80,12 +82,16 @@ class Contact extends Component {
   render() {
     return (
       <Layout>
-        <Headers pageTitle={'CONTACT'} pageDescription={contactDescription} />
+        <Headers pageTitle={'CONTACT'} pageDescription={contactDescription} >
+          <script src="https://sdk.form.run/js/v2/formrun.js" />
+        </Headers>
         <Ogp title={'CONTACT'} description={contactDescription} />
         <UnderLayer title="CONTACT">
           <section className="section">
             <div className="container">
-              <Paragraph>coming soon...</Paragraph>
+              <Paragraph>
+                <ContactForm />
+              </Paragraph>
             </div>
           </section>
         </UnderLayer>
@@ -105,3 +111,4 @@ const SendWrap = styled.div`
 const Paragraph = styled.p`
   text-align: center;
 `;
+

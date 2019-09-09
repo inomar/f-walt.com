@@ -1,5 +1,5 @@
-export const SiteTitle = 'F.WALT';
-export const Description = 'ラウドロックバンドF.WALTの公式サイト。ライブ情報、リリース情報、プロフィールなど。';
+export const SiteTitle = 'F.WALT OFFICIAL WEB SITE';
+export const Description = 'ラウドロックバンドF.WALT(エフォルト)の公式サイト。ライブ情報、リリース情報、プロフィールなど。';
 
 export const Url = 'https://f-walt.com';
 

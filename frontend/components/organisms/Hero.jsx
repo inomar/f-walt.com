@@ -19,7 +19,7 @@ const Hero = () => (
   <section>
     <Container className="container">
       <HeroImage>
-        <img src="/static/top.jpg"/>
+        <img src="/static/main.jpg"/>
       </HeroImage>
     </Container>
   </section>

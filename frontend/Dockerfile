@@ -2,12 +2,7 @@ FROM node:10
 
 WORKDIR /usr/local/app
 
-COPY package.json .
+COPY package.json package.json
 
-RUN yarn
-
-COPY . .
-
-RUN yarn build
-
-CMD ["yarn", "start"]
+RUN set -ex; \
+    yarn install

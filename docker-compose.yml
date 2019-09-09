@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   wp-api:
-    image: wordpress:latest
+    build: wordpress
     ports:
       - 9000:80
     links:
@@ -13,9 +13,6 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wp_user
       WORDPRESS_DB_PASSWORD: database_password
-    volumes:
-      - ./wordpress/themes:/var/www/html/wp-content/themes
-      - ./wordpress/plugins:/var/www/html/wp-content/plugins
 
   db:
     image: mysql:5.7
@@ -32,7 +29,7 @@ services:
       - ./db-data:/docker-entrypoint-initdb.d
 
   frontend:
-    image: node:10
+    build: frontend
     ports:
       - 3000:3000
     links:
