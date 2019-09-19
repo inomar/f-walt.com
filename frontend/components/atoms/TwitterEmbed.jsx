@@ -9,7 +9,7 @@ const TwitterEmbed = ({ screenName }) => (
   transparent
   noFooter
   noScrollbar
-  options={{height: 400}}
+  options={{height: 700, width: '100%'}}
 />
 );
 

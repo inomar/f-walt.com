@@ -3,7 +3,7 @@ export const Description = 'ラウドロックバンドF.WALT(エフォルト)�
 
 export const Url = 'https://f-walt.com';
 
-export const SpotifyUri = 'spotify:album:4INtUvPabb6IPrfqOHeW9u';
+export const SpotifyUri = 'spotify:album:7yz8mF5cv64t4DhkVxysUa';
 export const TwitterScreenName = 'f_walt_jp';
 export const TwitterUrl = 'https://twitter.com/f_walt_jp';
 export const InstagramUrl = 'https://www.instagram.com/f_walt_jp/';
