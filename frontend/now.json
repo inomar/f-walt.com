@@ -1,17 +1,17 @@
 {
-  "version": 2,
-  "alias": ["fwalt.now.sh", "f-walt.com", "www.f-walt.com"],
-  "env": {
-    "WP_URL": "@wp-url"
-  },
-  "builds": [
-    { 
-      "src": "package.json",
-      "use": "@now/next"
-    }
-  ],
-  "routes": [
-    { "src": "/live/(?<id>[^/]+)$", "dest": "/live/show?id=$id" },
-    { "src": "/news/(?<id>[^/]+)$", "dest": "/news/show?id=$id" }
-  ]
+	"version": 2,
+	"alias": ["f-walt.com", "www.f-walt.com"],
+	"env": {
+		"WP_URL": "@wp-url"
+	},
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/next"
+		}
+	],
+	"routes": [
+		{ "src": "/live/(?<id>[^/]+)$", "dest": "/live/show?id=$id" },
+		{ "src": "/news/(?<id>[^/]+)$", "dest": "/news/show?id=$id" }
+	]
 }
