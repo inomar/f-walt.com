@@ -1,0 +1,6 @@
+{
+	"routes": [
+		{ "src": "/live/(?<id>[^/]+)$", "dest": "/live/show?id=$id" },
+		{ "src": "/news/(?<id>[^/]+)$", "dest": "/news/show?id=$id" }
+	]
+}
