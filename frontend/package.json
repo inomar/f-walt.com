@@ -36,6 +36,7 @@
 		"react-twitter-embed": "^2.0.8",
 		"react-youtube": "^7.9.0",
 		"recompose": "^0.30.0",
+		"sass": "^1.56.1",
 		"styled-components": "^4.2.0",
 		"styled-media-query": "^2.1.1",
 		"superagent": "^5.0.6",
@@ -46,7 +47,6 @@
 		"@zeit/next-sass": "^1.0.1",
 		"babel-plugin-styled-components": "^1.10.0",
 		"file-loader": "^3.0.1",
-		"node-sass": "^4.0.0",
 		"sass-loader": "^7.1.0",
 		"url-loader": "^1.1.2"
 	}
