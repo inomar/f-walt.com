@@ -17,7 +17,7 @@
     "classnames": "^2.2.6",
     "dotenv": "^8.0.0",
     "dotenv-webpack": "^1.7.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "moment": "^2.24.0",
     "moment-locales-webpack-plugin": "^1.0.7",
     "next": "^8.1.0",
